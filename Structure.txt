@@ -1,0 +1,65 @@
+1. Structure de l'application web
+
+FRONTEND :
+- Accueil : Présentation de l'entreprise et de sa mission écoresponsable.
+- Catalogue : Liste des planches à voile disponibles, avec filtres (prix, tailles, etc.).
+- Visualisation 3D : Permettre de personnaliser et visualiser les planches à voile en 3D.
+- Pages Produit : Détails des planches sélectionnées avec options de personnalisation.
+- Panier et Paiement : Gestion des commandes avec une interface de paiement sécurisée.
+- Blog/Actualités : Articles sur l'impact écologique, innovations, etc.
+- Contact/FAQ : Page de contact et réponses aux questions fréquentes.
+
+BACKEND
+- API RESTful : Communication entre le frontend et la base de données pour les produits, utilisateurs, commandes, etc.
+- Gestion des utilisateurs : Authentification, autorisation, gestion des comptes.
+- Gestion des produits : CRUD pour les planches à voile, gestion des options de personnalisation.
+- Paiement sécurisé : Intégration de solutions comme Stripe ou PayPal.
+- Suivi des commandes : Historique des commandes pour l'utilisateur et l'administration.
+- Panneau Admin : Gestion des contenus, commandes, utilisateurs et statistiques.
+
+2. Technologies à utiliser
+FRONTEND :
+- React.js ou Vue.js : Création de composants réactifs et dynamiques.
+- React.js : Plus adapté pour une extension future avec React Native.
+- Vue.js : Excellente option pour la gestion des interfaces interactives et la 3D.
+- Three.js : Bibliothèque pour les visualisations 3D des planches.
+- CSS Framework : Tailwind CSS ou Bootstrap pour un design rapide et adaptable.
+- Webpack/Vite : Gestion des assets et bundling.
+
+BACKEND :
+- Node.js avec Express : Gestion de l'API REST, rapide et évolutif.
+
+Base de données :
+- MongoDB : Pour sa flexibilité dans la gestion des données non structurées (comme les options de personnalisation).
+ou
+- MySQL : Pour un modèle relationnel classique si nécessaire.
+
+Authentification : JWT pour les sessions sécurisées. (pour la gestion des utilisateurs)
+
+(otpionel)
+- Stripe ou PayPal SDK : Intégration des paiements.
+Mobile (option future) :
+React Native : Code partagé avec React.js, facilitant l'export du site vers mobile.
+
+
+3. Partie 3D
+Utilise Three.js avec Vue.js ou React.js pour intégrer des modèles 3D interactifs.
+Format des modèles : GLTF/GLB, facile à manipuler sur le web.
+Interface fluide : Permets la rotation, zoom, et personnalisation des couleurs/éléments des planches.
+
+
+4. Étapes de développement
+
+Phase 1 : Développement du site vitrine :
+- Mise en place des pages statiques (accueil, contact, blog).
+- Intégration du catalogue et des pages produit.
+
+Phase 2 : E-commerce :
+- Gestion des commandes et paiements.
+- Création du panneau d'administration.
+
+Phase 3 : Visualisation 3D :
+- Intégration des modèles 3D et personnalisation.
+
+Phase 4 : Mobile :
+- Conversion en application mobile avec React Native.
