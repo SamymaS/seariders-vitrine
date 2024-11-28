@@ -10,16 +10,23 @@
 ### Frontend (React.js)
 ```
 seariders-vitrine/
-├── public/                  # Fichiers publics (index.html, favicon, manifest)
+├── public/                  # Contient le fichier HTML de base
+│   └── vite.svg             # Image par défaut de Vite
 ├── src/                     # Code source principal
-│   ├── components/          # Composants réutilisables (Navbar, Footer, etc.)
-│   ├── pages/               # Pages principales (Home, About, Contact, etc.)
-│   ├── assets/              # Images, icônes, vidéos, etc.
-│   ├── styles/              # Fichiers CSS/SCSS spécifiques au projet
-│   ├── App.js               # Composant racine
-│   └── index.js             # Point d'entrée principal de l'application
+│   ├── assets/              # Ressources statiques (par exemple, images)
+│   │   └── react.svg        # Image par défaut
+│   ├── components/          # Composants réutilisables
+│   │   └── Navbar.jsx       # Barre de navigation
+│   ├── App.css              # Styles globaux
+│   ├── App.jsx              # Composant racine
+│   ├── index.css            # Styles liés à l'entrée principale
+│   ├── main.jsx             # Point d'entrée du projet
+│   └── pages/               # Pages principales (à développer)
+│       └── Home.jsx         # Page d'accueil
 ├── package.json             # Dépendances du projet
-├── vite.config.js           # Configuration de Vite pour le développement
+├── postcss.config.js        # Configuration de PostCSS
+├── tailwind.config.js       # Configuration de Tailwind CSS
+└── vite.config.js           # Configuration de Vite
 ├── .gitignore               # Fichiers/dossiers ignorés par Git
 └── README.md                # Documentation du projet
 ```
