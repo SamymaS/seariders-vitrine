@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './css/main.css'; // Styles globaux
 import './css/products.css'; // Style pour la Page Product
+import './css/engagements.css';  // Styles engagement
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

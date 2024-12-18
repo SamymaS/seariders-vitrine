@@ -1,5 +1,5 @@
 import React from "react";
-import "./Engagements.css";
+import "/css/engagements.css";
 
 const Engagements = () => {
   return (
