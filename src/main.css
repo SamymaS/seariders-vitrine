@@ -1,6 +1,18 @@
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-  }
-  
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.page-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  color: #666;
+}
