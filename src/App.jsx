@@ -2,12 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-
-// Composants pour d'autres pages (à créer plus tard)
-const Products = () => <div>Produits Page</div>;
-const About = () => <div>À propos Page</div>;
-const Contact = () => <div>Contact Page</div>;
-const Shop = () => <div>Boutique Page</div>;
+import Products from "./pages/Products";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Shop from "./pages/Shop";
 
 function App() {
   return (
@@ -16,10 +14,12 @@ function App() {
       <div className="container mx-auto mt-8 px-4">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* Page 404 */}
+          <Route path="*" element={<div className="text-center">Page non trouvée</div>} />
         </Routes>
       </div>
     </Router>
