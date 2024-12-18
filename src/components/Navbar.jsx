@@ -1,55 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-600 text-white shadow-md">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-2xl font-bold">
-          <Link to="/">Sea Riders</Link>
-        </div>
-
-        {/* Menu */}
-        <ul className="flex space-x-6">
-          <li>
-            <Link to="/" className="hover:text-gray-200">
-              Accueil
-            </Link>
-          </li>
-          <li>
-            <Link to="/products" className="hover:text-gray-200">
-              Produits
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="hover:text-gray-200">
-              À propos
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="hover:text-gray-200">
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link to="/Engagements" className="hover:text-gray-200">
-              Nos Engagements
-            </Link>
-          </li>
-        </ul>
-
-        {/* Bouton d'Action */}
-        <div>
-          <Link
-            to="/shop"
-            className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100"
-          >
-            Boutique
-          </Link>
-        </div>
+    <header className="w-full h-[100px] bg-[#FFECE8] flex justify-between items-center px-6">
+      {/* Logo */}
+      <div className="flex items-center">
+        <div className="bg-[#013264] w-6 h-6"></div>
+        <span className="ml-2 text-[#013264] font-bold text-lg">RIDERS</span>
       </div>
-    </nav>
+
+      {/* Navigation Links */}
+      <nav className="flex space-x-6 text-[#013264]">
+        <Link to="/" className="uppercase font-semibold">
+          Accueil
+        </Link>
+        <Link to="/boutique" className="uppercase font-bold underline">
+          Boutique
+        </Link>
+        <Link to="/engagements" className="uppercase font-semibold">
+          Notre engagement
+        </Link>
+        <Link to="/contact" className="uppercase font-semibold">
+          Contact
+        </Link>
+        <Link to="/inscription" className="uppercase font-semibold">
+          Inscription
+        </Link>
+      </nav>
+    </header>
   );
 };
 

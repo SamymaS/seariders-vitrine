@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
 import Engagements from "./pages/Engagements";
+import Inscription from "./pages/Inscription";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className="container mx-auto mt-8 px-4">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/inscription" element={<Inscription />} />
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/Products" element={<Products />} />
