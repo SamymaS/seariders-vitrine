@@ -108,12 +108,14 @@ seariders-backend/
 
 ---
 
+## 📄 Auteurs 
+   ```bash
+   - Samy Boudaoud M1 DevIOT
+   - Abdallah Merad B2 Info
+   - Hugo Bisserier B2 Info
+   ```
+
+---
 ## 📄 Licence
 
 Ce projet est sous licence MIT.
-<<<<<<< HEAD
-
-Abdallah
-=======
-Abdallah
->>>>>>> b31ffabf3478b4302978d5c0fe09a0c975b6821f
