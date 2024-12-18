@@ -1,13 +1,13 @@
 import React from "react";
-import "./Products.css";
+// import "../Products.css";
 
 const products = [
-  { id: 1, name: "Planche Sunshine", price: 400, image: "./BoutiqueNosPlanches.png" },
-  { id: 2, name: "Planche Sunshine", price: 400, image: "./BoutiqueNosPlanches.png" },
-  { id: 3, name: "Planche Sunshine", price: 400, image: "./BoutiqueNosPlanches.png" },
-  { id: 4, name: "Planche Sunshine", price: 400, image: "./BoutiqueNosPlanches.png" },
-  { id: 5, name: "Planche Sunshine", price: 400, image: "./BoutiqueNosPlanches.png" },
-  { id: 6, name: "Planche Sunshine", price: 400, image: "./BoutiqueNosPlanches.png" },
+  { id: 1, name: "Planche Sunshine", price: 400, image: "src/assets/BoutiqueNosPlanches.png" },
+  { id: 2, name: "Planche Sunshine", price: 400, image: "src/assets/BoutiqueNosPlanches.png" },
+  { id: 3, name: "Planche Sunshine", price: 400, image: "src/assets/BoutiqueNosPlanches.png" },
+  { id: 4, name: "Planche Sunshine", price: 400, image: "src/assets/BoutiqueNosPlanches.png" },
+  { id: 5, name: "Planche Sunshine", price: 400, image: "src/assets/BoutiqueNosPlanches.png" },
+  { id: 6, name: "Planche Sunshine", price: 400, image: "src/assets/BoutiqueNosPlanches.png" },
 ];
 
 const Products = () => {
