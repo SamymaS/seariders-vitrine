@@ -6,6 +6,7 @@ import Products from "./pages/Products";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
+import Engagements from "./pages/Engagements";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/Engagements" element={<Engagements/>} />
           {/* Page 404 */}
           <Route path="*" element={<div className="text-center">Page non trouvée</div>} />
         </Routes>
