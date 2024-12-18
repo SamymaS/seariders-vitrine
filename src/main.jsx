@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './main.css'; // Styles globaux
+import './css/main.css'; // Styles globaux
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
