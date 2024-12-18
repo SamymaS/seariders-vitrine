@@ -10,25 +10,25 @@
 ### Frontend (React.js)
 ```
 seariders-vitrine/
-├── public/                  # Contient le fichier HTML de base
-│   └── vite.svg             # Image par défaut de Vite
+├── public/                  # Fichiers publics accessibles directement
+│   └── vite.svg             # Exemple d'icône par défaut
 ├── src/                     # Code source principal
-│   ├── assets/              # Ressources statiques (par exemple, images)
-│   │   └── react.svg        # Image par défaut
+│   ├── App.jsx              # Composant racine définissant les routes
+│   ├── main.css             # Styles globaux (peut inclure Tailwind CSS)
+│   ├── main.jsx             # Point d'entrée de l'application
+│   ├── assets/              # Ressources statiques (images, icônes, etc.)
+│   └── ... # toutes les images/modèles utilisés
+│   │
 │   ├── components/          # Composants réutilisables
 │   │   └── Navbar.jsx       # Barre de navigation
-│   ├── App.css              # Styles globaux
-│   ├── App.jsx              # Composant racine
-│   ├── index.css            # Styles liés à l'entrée principale
-│   ├── main.jsx             # Point d'entrée du projet
-│   └── pages/               # Pages principales (à développer)
-│       └── Home.jsx         # Page d'accueil
-├── package.json             # Dépendances du projet
-├── postcss.config.js        # Configuration de PostCSS
-├── tailwind.config.js       # Configuration de Tailwind CSS
-└── vite.config.js           # Configuration de Vite
-├── .gitignore               # Fichiers/dossiers ignorés par Git
-└── README.md                # Documentation du projet
+│   ├── pages/               # Pages principales du site
+│       ├── About.jsx        # Page "À propos"
+│       ├── Contact.jsx      # Page de contact
+│       ├── Engagements.jsx  # Page "Nos Engagements"
+│       ├── Home.jsx         # Page d'accueil
+│       ├── Products.jsx     # Page des produits
+│       └── Shop.jsx         # Page de la boutique
+
 ```
 
 ### Backend *(Phase Future)*
