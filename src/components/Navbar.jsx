@@ -15,8 +15,11 @@ const Navbar = () => {
         <Link to="/" className="uppercase font-semibold">
           Accueil
         </Link>
-        <Link to="/boutique" className="uppercase font-bold underline">
-          Boutique
+        <Link to="/boutique" className="uppercase font-semibold">
+          Notre boutique
+          </Link>
+          <Link to="/Products" className="uppercase font-semibold">
+          Nos produits
         </Link>
         <Link to="/engagements" className="uppercase font-semibold">
           Notre engagement
