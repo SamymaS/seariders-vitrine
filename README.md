@@ -111,5 +111,9 @@ seariders-backend/
 ## 📄 Licence
 
 Ce projet est sous licence MIT.
+<<<<<<< HEAD
 
 Abdallah
+=======
+Abdallah
+>>>>>>> b31ffabf3478b4302978d5c0fe09a0c975b6821f
