@@ -32,6 +32,11 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
+          <li>
+            <Link to="/Engagements" className="hover:text-gray-200">
+              Nos Engagements
+            </Link>
+          </li>
         </ul>
 
         {/* Bouton d'Action */}

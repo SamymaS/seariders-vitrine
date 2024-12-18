@@ -6,7 +6,7 @@ const Shop = () => {
       <h1 className="text-3xl font-bold text-center">Boutique</h1>
       <p className="mt-4 text-center max-w-3xl mx-auto text-gray-600">
         Découvrez notre boutique en ligne et explorez nos planches à voile
-        écoresponsables. Profitez d’une expérience d’achat fluide et rapide !
+        écoresponsables. Profitez d'une expérience d'achat fluide et rapide !
       </p>
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {/* Produit 1 */}
