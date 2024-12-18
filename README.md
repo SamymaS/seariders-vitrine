@@ -10,7 +10,6 @@
 ### Frontend (React.js)
 ```
 seariders-vitrine/
-seariders-vitrine/
 ├── public/                  # Fichiers publics accessibles directement
 │   └── vite.svg             # Exemple d'icône par défaut
 ├── src/                     # Code source principal
