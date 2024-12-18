@@ -111,3 +111,6 @@ seariders-backend/
 ## 📄 Licence
 
 Ce projet est sous licence MIT.
+<<<<<<< HEAD
+=======
+>>>>>>> 39e0158 (Update README.md)
