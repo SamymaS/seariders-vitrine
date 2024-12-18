@@ -1,57 +1,45 @@
 import React from "react";
+import "./Engagements.css";
 
 const Engagements = () => {
   return (
-    <div className="font-sans text-gray-800">
-      {/* Header */}
-      <header className="flex justify-between items-center px-6 py-4 bg-white shadow-md">
-        <h1 className="text-3xl font-bold text-orange-500">sea RIDERS</h1>
-        <nav>
-          <ul className="flex gap-6 text-gray-600">
-            <li className="hover:text-orange-500 cursor-pointer">ACCUEIL</li>
-            <li className="hover:text-orange-500 cursor-pointer">PRODUITS</li>
-            <li className="hover:text-orange-500 cursor-pointer">NOTRE ENGAGEMENT</li>
-            <li className="hover:text-orange-500 cursor-pointer">CONTACT</li>
-          </ul>
-        </nav>
-      </header>
-
+    <div className="main-container">
       {/* Hero Section */}
-      <section className="relative text-white bg-gray-900">
+      <section className="hero-section">
         <img
           src="hero-image.jpg"
           alt="Cleaning the sea"
-          className="w-full h-96 object-cover opacity-70"
+          className="hero-image"
         />
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center">
-          <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="hero-content">
+          <h2 className="hero-title">
             UNE PRATIQUE DU WINDSURF <br />
-            <em className="italic text-gray-200">
+            <em className="hero-subtitle">
               PLUS RESPECTUEUSE DE L'ENVIRONNEMENT
             </em>
           </h2>
-          <div className="flex gap-8 mt-6">
-            <div className="text-center">
-              <p className="text-4xl font-bold">360kg</p>
-              <p>de déchets recyclés</p>
+          <div className="hero-stats">
+            <div className="stat-item">
+              <p className="stat-value">360kg</p>
+              <p className="stat-label">de déchets recyclés</p>
             </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold">80kg</p>
-              <p>de co2 évité</p>
+            <div className="stat-item">
+              <p className="stat-value">80kg</p>
+              <p className="stat-label">de co2 évité</p>
             </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold">80%</p>
-              <p>de matière recyclée</p>
+            <div className="stat-item">
+              <p className="stat-value">80%</p>
+              <p className="stat-label">de matière recyclée</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Materials Section */}
-      <section className="py-12 bg-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-orange-500">Matériaux durable</h2>
-          <p className="mt-4 text-gray-600">
+      <section className="materials-section">
+        <div className="materials-content">
+          <h2 className="materials-title">Matériaux durable</h2>
+          <p className="materials-description">
             Nos planches à voile sont fabriquées avec des matériaux recyclés grâce
             auxquels nous pouvons ensemble préserver la mer moins polluée. <br />
             Sea Riders respecte l'environnement dans lequel nous et les autres peuvent s'amuser.
@@ -59,24 +47,24 @@ const Engagements = () => {
           <img
             src="recycled-plastic.jpg"
             alt="Plastic being picked up"
-            className="w-3/4 mx-auto mt-6 rounded-lg shadow-md"
+            className="materials-image"
           />
         </div>
       </section>
 
       {/* Innovation Section */}
-      <section className="py-12 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800">
+      <section className="innovation-section">
+        <div className="innovation-content">
+          <h2 className="innovation-title">
             Nous croyons en l'innovation et en la durabilité.
           </h2>
-          <p className="text-gray-600 text-center mt-4">
+          <p className="innovation-description">
             Depuis toujours, nous avons développé des alliages uniques et innovants
             pour la construction de nos planches à voile éco-responsables. En combinant
             des matériaux recyclés et un processus écologique de fibre naturelle et de
             résine, nous avons créé des produits performants et durables.
           </p>
-          <p className="mt-6 p-4 bg-green-100 text-green-800 text-center rounded-lg">
+          <p className="innovation-highlight">
             EN CHOISISSANT UNE PLANCHE À VOILE SEA RIDERS, VOUS OPTEZ POUR UN PRODUIT
             DE HAUTE QUALITÉ AVEC UN ENGAGEMENT INÉBRANLABLE POUR LA DURABILITÉ ENVIRONNEMENTALE.
           </p>
@@ -84,73 +72,65 @@ const Engagements = () => {
       </section>
 
       {/* Events Section */}
-      <section className="py-12 bg-gray-50">
-        <h3 className="text-3xl font-bold text-center mb-6 text-gray-800">
-          Nos événements
-        </h3>
-        <div className="flex flex-wrap justify-center gap-6">
+      <section className="events-section">
+        <h3 className="events-title">Nos événements</h3>
+        <div className="events-grid">
           {[
             { date: "13 AVRIL 2024", title: "Nettoyons le Sud", time: "9H - 11H" },
             { date: "22 MAI 2024", title: "Pêche au crochet feat. LIME", time: "9H - 11H" },
           ].map((event, index) => (
             <div
               key={index}
-              className="w-64 p-6 bg-white rounded-lg shadow-md text-center"
+              className="event-card"
             >
-              <h4 className="text-lg font-bold">{event.date}</h4>
-              <p className="mt-2 text-gray-600">{event.title}</p>
-              <span className="block mt-2 font-semibold">{event.time}</span>
-              <button className="mt-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">
-                Participer
-              </button>
+              <h4 className="event-date">{event.date}</h4>
+              <p className="event-title">{event.title}</p>
+              <span className="event-time">{event.time}</span>
+              <button className="btn-participate">Participer</button>
             </div>
           ))}
         </div>
       </section>
 
       {/* Partners Section */}
-      <section className="py-12 bg-white">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          Nos partenaires
-        </h2>
-        <div className="flex justify-center gap-12">
-          <img src="clean-my-calanques.jpg" alt="Partner 1" className="w-32" />
-          <img src="wings-of-the-ocean.jpg" alt="Partner 2" className="w-32" />
-          <img src="sea-cleaners.jpg" alt="Partner 3" className="w-32" />
+      <section className="partners-section">
+        <h2 className="partners-title">Nos partenaires</h2>
+        <div className="partners-grid">
+          <img src="clean-my-calanques.jpg" alt="Partner 1" className="partner-logo" />
+          <img src="wings-of-the-ocean.jpg" alt="Partner 2" className="partner-logo" />
+          <img src="sea-cleaners.jpg" alt="Partner 3" className="partner-logo" />
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-orange-500 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <h2 className="text-2xl font-bold mb-6 md:mb-0">sea RIDERS</h2>
-            <div className="flex flex-col items-center md:items-end">
-              <p className="mb-2">Abonnez-vous pour recevoir nos actus :</p>
-              <div className="flex">
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-header">
+            <h2 className="footer-title">sea RIDERS</h2>
+            <div className="footer-subscribe">
+              <p className="subscribe-text">Abonnez-vous pour recevoir nos actus :</p>
+              <div className="subscribe-form">
                 <input
                   type="email"
                   placeholder="Votre adresse mail..."
-                  className="p-2 rounded-l text-gray-800"
+                  className="subscribe-input"
                 />
-                <button className="bg-gray-700 text-white px-4 py-2 rounded-r hover:bg-gray-600">
-                  S'inscrire
-                </button>
+                <button className="btn-subscribe">S'inscrire</button>
               </div>
             </div>
           </div>
-          <div className="flex justify-between mt-8">
-            <div>
-              <h4 className="font-bold">Support</h4>
+          <div className="footer-links">
+            <div className="footer-support">
+              <h4 className="footer-section-title">Support</h4>
               <ul>
                 <li>Conditions générales</li>
                 <li>Mentions légales</li>
                 <li>Données personnelles</li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold">Réseaux sociaux</h4>
-              <ul className="flex gap-4">
+            <div className="footer-social">
+              <h4 className="footer-section-title">Réseaux sociaux</h4>
+              <ul>
                 <li>Facebook</li>
                 <li>Instagram</li>
                 <li>LinkedIn</li>
