@@ -1,35 +1,74 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/logos/logobleu.png";
 
 const Navbar = () => {
   return (
-    <header className="w-full h-[100px] bg-[#FFECE8] flex justify-between items-center px-6">
+    <header className="w-full h-[100px] bg-[#FFECE8] flex justify-between items-center px-20">
       {/* Logo */}
       <div className="flex items-center">
-        <div className="bg-[#013264] w-6 h-6"></div>
-        <span className="ml-2 text-[#013264] font-bold text-lg">RIDERS</span>
+        <NavLink to="/">
+          <img src={logo} alt="seariders" className="h-12" />
+        </NavLink>
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex space-x-6 text-[#013264]">
-        <Link to="/" className="uppercase font-semibold">
+      <nav className="flex space-x-6">
+        {/* Accueil */}
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `relative uppercase font-semibold text-[#013264] text-[18px] leading-[24px] ${
+              isActive
+                ? "font-bold underline" // Actif
+                : "hover:drop-shadow-md hover:font-bold" // Survolé
+            }`
+          }
+        >
           Accueil
-        </Link>
-        <Link to="/boutique" className="uppercase font-semibold">
-          Notre boutique
-          </Link>
-          <Link to="/Products" className="uppercase font-semibold">
-          Nos produits
-        </Link>
-        <Link to="/engagements" className="uppercase font-semibold">
-          Notre engagement
-        </Link>
-        <Link to="/contact" className="uppercase font-semibold">
+        </NavLink>
+
+        {/* Boutique */}
+        <NavLink
+          to="/boutique"
+          className={({ isActive }) =>
+            `relative uppercase font-semibold text-[#013264] text-[18px] leading-[24px] ${
+              isActive
+                ? "font-bold underline"
+                : "hover:drop-shadow-md hover:font-bold"
+            }`
+          }
+        >
+          Boutique
+        </NavLink>
+
+        {/* Notre Engagement */}
+        <NavLink
+          to="/engagements"
+          className={({ isActive }) =>
+            `relative uppercase font-semibold text-[#013264] text-[18px] leading-[24px] ${
+              isActive
+                ? "font-bold underline"
+                : "hover:drop-shadow-md hover:font-bold"
+            }`
+          }
+        >
+          Notre Engagement
+        </NavLink>
+
+        {/* Contact */}
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `relative uppercase font-semibold text-[#013264] text-[18px] leading-[24px] ${
+              isActive
+                ? "font-bold underline"
+                : "hover:drop-shadow-md hover:font-bold"
+            }`
+          }
+        >
           Contact
-        </Link>
-        <Link to="/inscription" className="uppercase font-semibold">
-          Inscription
-        </Link>
+        </NavLink>
       </nav>
     </header>
   );

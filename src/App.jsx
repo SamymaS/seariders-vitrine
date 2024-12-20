@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
 import Engagements from "./pages/Engagements";
 import Inscription from "./pages/Inscription";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <div className="container mx-auto mt-8 px-4">
         <Routes>
+          {/* Routes ici */}
           <Route path="/" element={<Home />} />
           <Route path="/inscription" element={<Inscription />} />
           <Route path="/about" element={<About />} />
@@ -26,6 +28,7 @@ function App() {
           <Route path="*" element={<div className="text-center">Page non trouvée</div>} />
         </Routes>
       </div>
+      <Footer /> {/* Footer ajouté */}
     </Router>
   );
 }
