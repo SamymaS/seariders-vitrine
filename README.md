@@ -10,24 +10,33 @@
 ### Frontend (React.js)
 ```
 seariders-vitrine/
-├── public/                  # Fichiers publics accessibles directement
-│   └── vite.svg             # Exemple d'icône par défaut
-├── src/                     # Code source principal
-│   ├── App.jsx              # Composant racine définissant les routes
-│   ├── main.css             # Styles globaux (peut inclure Tailwind CSS)
-│   ├── main.jsx             # Point d'entrée de l'application
-│   ├── assets/              # Ressources statiques (images, icônes, etc.)
-│   └── ... # toutes les images/modèles utilisés
+├── public/                      # Fichiers publics accessibles directement
+│   └── vite.svg                 # Exemple d'icône par défaut (à supprimer/changer)
+├── src/
+│   ├── assets/                  # Ressources statiques (toutes les images/modèles utilisés)
+│   │       ├── boutons/
+│   │       ├── images/
+│   │       └── logos/
 │   │
-│   ├── components/          # Composants réutilisables
-│   │   └── Navbar.jsx       # Barre de navigation
-│   ├── pages/               # Pages principales du site
-│       ├── About.jsx        # Page "À propos"
-│       ├── Contact.jsx      # Page de contact
-│       ├── Engagements.jsx  # Page "Nos Engagements"
-│       ├── Home.jsx         # Page d'accueil
-│       ├── Products.jsx     # Page des produits
-│       └── Shop.jsx         # Page de la boutique
+│   ├── components/              # Composants réutilisables
+│   │           ├── Navbar.jsx
+│   │           └── Footer.jsx
+│   ├── css/
+│   │      ├── main.css          # Styles globaux (peut inclure Tailwind CSS)
+│   │      └── products.css
+│   │
+│   ├── pages/                   # Pages principales du site
+│   │       ├── About.jsx 
+│   │       ├── Contact.jsx
+│   │       ├── Engagements.jsx
+│   │       ├── Home.jsx
+│   │       ├── Inscription.jsx
+│   │       ├── Product.jsx
+│   │       └── Shop.jsx     
+│   ├── App.jsx                  # Composant racine définissant les routes
+│   └── main.jsx                 # Point d'entrée de l'application                
+└── ... 
+
 
 ```
 
