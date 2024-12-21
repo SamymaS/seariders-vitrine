@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './css/main.css'; // Styles globaux
-import './css/products.css'; // Style pour la Page Product
+import './css/Boutique.css'; // Style pour la Page Boutique
+import './css/Home.css'; // Style pour la Page Home
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

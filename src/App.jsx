@@ -2,10 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Products from "./pages/Products";
 import About from "./pages/About";
+import Boutique from "./pages/Boutique";
 import Contact from "./pages/Contact";
-import Shop from "./pages/Shop";
 import Engagements from "./pages/Engagements";
 import Inscription from "./pages/Inscription";
 import Footer from "./components/Footer";
@@ -18,12 +17,11 @@ function App() {
         <Routes>
           {/* Routes ici */}
           <Route path="/" element={<Home />} />
-          <Route path="/inscription" element={<Inscription />} />
           <Route path="/about" element={<About />} />
-          <Route path="/boutique" element={<Shop />} />
-          <Route path="/Products" element={<Products />} />
+          <Route path="/boutique" element={<Boutique />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Engagements" element={<Engagements/>} />
+          <Route path="/inscription" element={<Inscription />} />
           {/* Page 404 */}
           <Route path="*" element={<div className="text-center">Page non trouvée</div>} />
         </Routes>
