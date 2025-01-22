@@ -1,3 +1,6 @@
+Commande start :
+npx vite --port 3000
+npm run dev
 
 # Sea Riders Vitrine
 
