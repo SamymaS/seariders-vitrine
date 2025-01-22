@@ -1,7 +1,3 @@
-Commande start :
-npx vite --port 3000
-npm run dev
-
 # Sea Riders Vitrine
 
 **Sea Riders Vitrine** est un projet collaboratif visant à créer un site vitrine écoresponsable pour vendre des planches à voile fabriquées à partir de déchets recyclés récupérés des océans et plages.
@@ -58,7 +54,15 @@ seariders-backend/
 ├── .gitignore               # Fichiers/dossiers ignorés par Git
 └── README.md                # Documentation du backend
 ```
+---
+### Installations Pour Le Projet
+Commande start :
+- npm install
+- npx vite --port 3000
+- npm run dev
 
+- npm install react-icons
+- npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 ---
 
 ## ⚙️ Technologies Utilisées
