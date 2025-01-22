@@ -3,18 +3,7 @@ import React from "react";
 const Engagements = () => {
   return (
     <div className="font-sans text-gray-800">
-      {/* Header */}
-      <header className="flex justify-between items-center px-6 py-4 bg-white shadow-md">
-        <h1 className="text-3xl font-bold text-orange-500">sea RIDERS</h1>
-        <nav>
-          <ul className="flex gap-6 text-gray-600">
-            <li className="hover:text-orange-500 cursor-pointer">ACCUEIL</li>
-            <li className="hover:text-orange-500 cursor-pointer">PRODUITS</li>
-            <li className="hover:text-orange-500 cursor-pointer">NOTRE ENGAGEMENT</li>
-            <li className="hover:text-orange-500 cursor-pointer">CONTACT</li>
-          </ul>
-        </nav>
-      </header>
+  
 
       {/* Hero Section */}
       <section className="relative text-white bg-gray-900">
@@ -119,46 +108,6 @@ const Engagements = () => {
           <img src="sea-cleaners.jpg" alt="Partner 3" className="w-32" />
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-orange-500 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <h2 className="text-2xl font-bold mb-6 md:mb-0">sea RIDERS</h2>
-            <div className="flex flex-col items-center md:items-end">
-              <p className="mb-2">Abonnez-vous pour recevoir nos actus :</p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Votre adresse mail..."
-                  className="p-2 rounded-l text-gray-800"
-                />
-                <button className="bg-gray-700 text-white px-4 py-2 rounded-r hover:bg-gray-600">
-                  S'inscrire
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-between mt-8">
-            <div>
-              <h4 className="font-bold">Support</h4>
-              <ul>
-                <li>Conditions générales</li>
-                <li>Mentions légales</li>
-                <li>Données personnelles</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold">Réseaux sociaux</h4>
-              <ul className="flex gap-4">
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>LinkedIn</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
