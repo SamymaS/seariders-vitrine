@@ -3,8 +3,7 @@ import "/src/css/engagements.css";
 
 const Engagements = () => {
   return (
-    <div className="font-sans text-gray-800">
-
+    <div className="main-container">
       {/* Hero Section */}
       <section className="hero-section">
         <img
