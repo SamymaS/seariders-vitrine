@@ -18,11 +18,11 @@ function App() {
         <Routes>
           {/* Routes ici */}
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/boutique" element={<Boutique />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Boutique" element={<Boutique />} />
+          <Route path="/Contact" element={<Contact />} />
           <Route path="/Engagements" element={<Engagements/>} />
-          <Route path="/inscription" element={<Inscription />} />
+          <Route path="/Inscription" element={<Inscription />} />
           <Route path="/Products" element={<Products />} />
           {/* Page 404 */}
           <Route path="*" element={<div className="text-center">Page non trouvée</div>} />
