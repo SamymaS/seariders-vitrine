@@ -1,105 +1,195 @@
-.home {
-  width: 100%;
-  background: #fffeff;
-  font-family: 'Degular', sans-serif;
+/* Global Styles */
+.homePage {
+  font-family: Arial, sans-serif;
+  color: #013264;
 }
 
 /* Hero Section */
 .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
   text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(180deg, #fff8e9 0%, #ffece8 100%);
 }
-.hero-title {
-  font-size: 60px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #013264;
+
+.heroContent {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
-.hero-subtitle {
-  font-size: 18px;
-  color: #013264;
-  margin-top: 20px;
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.ctaButton {
+  background-color: #ff8064;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ctaButton:hover {
+  background-color: #cd3412;
+}
+
+/* Nouveautés Section */
+.nouveautes {
+  padding: 2rem 1rem;
+  background-color: #fffbf2;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.productCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 250px;
+  text-align: center;
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.productTitle {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.productPrice {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff8064;
+}
+
+.productButton {
+  background-color: #013264;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.productButton:hover {
+  background-color: #cd3412;
 }
 
 /* Engagement Section */
 .engagement {
-  text-align: center;
-  padding: 50px 20px;
-}
-.section-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #013264;
-  margin-bottom: 20px;
-}
-.stats {
   display: flex;
-  justify-content: center;
-  gap: 50px;
-}
-.stat-item {
-  text-align: center;
-}
-.stat-value {
-  font-size: 28px;
-  font-weight: 700;
-  color: #013264;
-}
-.stat-description {
-  font-size: 16px;
-  color: #013264;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #e8f4ff;
 }
 
-/* Planches Section */
-.planches {
-  text-align: center;
-  padding: 50px 20px;
+.engagementImage {
+  flex: 1;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
 }
-.planches-container {
+
+.engagementContent {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stats {
   display: flex;
-  justify-content: center;
-  gap: 48px;
+  justify-content: space-around;
+  margin: 1.5rem 0;
 }
-.planche {
+
+.stat {
   text-align: center;
-  padding: 20px;
-  background: #f4f0f4;
-  border-radius: 16px;
-  width: 300px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-.planche-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: #013264;
-  margin: 10px 0;
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: bold;
 }
-.planche-price {
-  font-size: 18px;
-  font-weight: 700;
-  color: #013264;
+
+.statLabel {
+  font-size: 1rem;
+  color: #555;
 }
-.discover-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 17px;
-  font-weight: 700;
-  color: #ffffff;
-  background: #ff8064;
-  border: none;
-  border-radius: 32px;
-  cursor: pointer;
+
+/* Vision Section */
+.vision {
+  padding: 2rem 1rem;
+  background-color: #fffbf2;
+  text-align: center;
+}
+
+.visionText {
+  font-size: 1.2rem;
+  margin: 1rem 0;
 }
 
 /* Instagram Section */
 .instagram {
+  padding: 2rem 1rem;
+  background-color: #f4f8ff;
   text-align: center;
-  padding: 50px 20px;
-  background: #fff8e9;
 }
-.instagram-handle {
-  font-size: 18px;
-  color: #013264;
-  font-weight: 600;
+
+.instagramHandle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.instagramPosts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.instagramPost {
+  width: 150px;
+  height: 150px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instagramImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

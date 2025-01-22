@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import du composant Link
 
 const Footer = () => {
   return (
@@ -7,14 +8,12 @@ const Footer = () => {
         {/* Section Logo et Description */}
         <div className="mb-6 md:mb-0">
           <div className="flex items-center mb-8">
-            <div>            
-                <a href="/" target="_blank" rel="noopener noreferrer">
-                    <img src="src/assets/logos/logoblanc.png" alt="seariders"/>
-                </a>
+            <div>
+              <a href="/" target="_blank" rel="noopener noreferrer">
+                <img src="src/assets/logos/logoblanc.png" alt="seariders" />
+              </a>
             </div>
-        </div>
-
-
+          </div>
           <p className="text-sm">
             Abonnez-vous pour recevoir nos dernières actus et offres exclusives !
           </p>
@@ -78,40 +77,37 @@ const Footer = () => {
         <div>
           <h3 className="font-bold uppercase mb-4">Réseaux sociaux</h3>
           <div className="flex space-x-4">
-            {/* Bouton Facebook */}
             <a
               href="https://www.facebook.com/profile.php?id=61569793041689"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src="src/assets/logos/facebook.png" // Remplacez par le chemin correct
+                src="src/assets/logos/facebook.png"
                 alt="Facebook"
                 className="w-8 h-8"
               />
             </a>
 
-            {/* Bouton Instagram */}
             <a
               href="https://www.instagram.com/_sea_riders_/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src="src/assets/logos/instagram.png" // Remplacez par le chemin correct
+                src="src/assets/logos/instagram.png"
                 alt="Instagram"
                 className="w-8 h-8"
               />
             </a>
 
-            {/* Bouton LinkedIn */}
             <a
               href="https://www.linkedin.com/in/sea-riders-7a882333a/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src="src/assets/logos/linkedin.png" // Remplacez par le chemin correct
+                src="src/assets/logos/linkedin.png"
                 alt="LinkedIn"
                 className="w-8 h-8"
               />
@@ -128,9 +124,13 @@ const Footer = () => {
             placeholder="Votre adresse mail..."
             className="flex-grow h-12 border border-[#FFF8E9] rounded-full px-4 bg-transparent text-[#FFF8E9] placeholder-[#FFF8E9]"
           />
-          <button className="w-36 h-12 bg-[#FFF8E9] text-[#013264] font-semibold rounded-full">
+          {/* Bouton redirigeant vers la page Inscription */}
+          <Link
+            to="/inscription"
+            className="w-36 h-12 bg-[#FFF8E9] text-[#013264] font-semibold rounded-full flex items-center justify-center"
+          >
             S'inscrire
-          </button>
+          </Link>
         </form>
       </div>
     </footer>
