@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar"; // Modifiez ici si pas d'index.js
 import Footer from "./components/Footer"; // Modifiez ici si pas d'index.js
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Boutique from "./pages/Boutique";
+// import Boutique from "./pages/Boutique";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import Engagements from "./pages/Engagements";
@@ -18,11 +18,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/boutique" element={<Boutique />} />
+          {/* <Route path="/boutique" element={<Boutique />} /> */}
+          <Route path="/Products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/engagements" element={<Engagements />} />
           <Route path="/inscription" element={<Inscription />} />
-          <Route path="/Products" element={<Products />} />
           <Route path="*" element={<div className="text-center">Page non trouvée</div>} />
         </Routes>
       </div>

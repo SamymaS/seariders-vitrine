@@ -30,7 +30,7 @@ const Navbar = () => {
           Accueil
         </NavLink>
         <NavLink
-          to="/boutique"
+          to="/Products"
           className={({ isActive }) =>
             `uppercase font-semibold text-[18px] text-[#013264] ${
               isActive ? "font-bold underline" : "hover:drop-shadow-md"
