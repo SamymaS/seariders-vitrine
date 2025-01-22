@@ -1,0 +1,103 @@
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Section Contact */
+  .contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact-message {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    color: #FF8064; /* Orange */
+    font-weight: bold;
+    max-width: 45%;
+    margin-bottom: 20px; 
+    align-self: flex-start; 
+}
+
+  
+  .contact-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 50%;
+    width: 100%;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+    color: #002855; /* Bleu marine */
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #002855;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: #FF8064;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+  }
+  
+  .contact-form button {
+    background-color: #FF8064; /* Orange */
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #e3644d; /* Orange plus foncé */
+  }
+  
+  .contact-policy {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #002855;
+  }
+  
+  .contact-policy input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .contact-policy label {
+    display: inline;
+  }
+  
