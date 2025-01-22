@@ -1,0 +1,178 @@
+/* Réinitialisation */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Section Produits */
+.products-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.products-section h2 {
+  font-size: 2.5rem;
+  color: #002855;
+  margin-bottom: 30px;
+}
+
+.products-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.products-filters .right-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Ajoute un espacement spécifique entre recherche et tri */
+}
+
+
+.products-filters input {
+  flex: 1;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+
+.products-filters button,
+.products-filters select {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: white; /* Couleur par défaut */
+  color: #333; /* Texte gris foncé */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap; /* Empêche les boutons de se casser sur plusieurs lignes */
+}
+
+.products-filters button:hover,
+.products-filters select:hover {
+  background-color: #ffd5c2; /* Couleur douce au survol */
+  color: #333; /* Texte reste sombre */
+}
+
+.products-filters button.active {
+  background-color: white; /* Fond blanc */
+  color: #333; /* Texte sombre */
+  border: 1px solid #ffd5c2; /* Bordure douce */
+}
+
+.products-filters button.active:hover {
+  background-color: #ffd5c2; /* Fond doux au survol */
+  color: #333; /* Texte reste sombre */
+}
+
+/* Grille des produits */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px; /* Fixe la hauteur des images */
+  object-fit: contain; /* Garde les proportions */
+  border-radius: 15px;
+}
+
+.product-card h3 {
+  margin: 15px 0 10px;
+  font-size: 1.4rem;
+}
+
+.product-card p {
+  color: #ff725e;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-card button {
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: #ff725e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #e64d3d;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Icône panier */
+.product-card .cart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ff725e;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.product-card .cart-icon:hover {
+  color: #e64d3d;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-filters {
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: scroll; /* Active le défilement horizontal */
+    gap: 10px;
+  }
+}
