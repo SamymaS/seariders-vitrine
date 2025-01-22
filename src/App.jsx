@@ -9,6 +9,7 @@ import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import Engagements from "./pages/Engagements";
 import Inscription from "./pages/Inscription";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           {/* <Route path="/boutique" element={<Boutique />} /> */}
+          <Route path="/Blog" element={<Blog />} />
           <Route path="/Products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/engagements" element={<Engagements />} />

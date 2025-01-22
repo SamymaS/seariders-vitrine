@@ -59,6 +59,28 @@ const Navbar = () => {
         >
           Contact
         </NavLink>
+        {/* Nouveau lien Blog */}
+        <NavLink
+          to="/blog"
+          className={({ isActive }) =>
+            `uppercase font-semibold text-[18px] text-[#013264] ${
+              isActive ? "font-bold underline" : "hover:drop-shadow-md"
+            }`
+          }
+        >
+          Blog
+        </NavLink>
+        {/* Nouveau lien Inscription */}
+        <NavLink
+          to="/inscription"
+          className={({ isActive }) =>
+            `uppercase font-semibold text-[18px] text-[#013264] ${
+              isActive ? "font-bold underline" : "hover:drop-shadow-md"
+            }`
+          }
+        >
+          Inscription
+        </NavLink>
       </nav>
 
       {/* Icons Section */}
