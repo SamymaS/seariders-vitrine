@@ -3,7 +3,8 @@ import "/src/css/engagements.css";
 
 const Engagements = () => {
   return (
-    <div className="main-container">
+    <div className="font-sans text-gray-800">
+
       {/* Hero Section */}
       <section className="hero-section">
         <img
@@ -101,44 +102,6 @@ const Engagements = () => {
           <img src="sea-cleaners.jpg" alt="Partner 3" className="partner-logo" />
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-header">
-            <h2 className="footer-title">sea RIDERS</h2>
-            <div className="footer-subscribe">
-              <p className="subscribe-text">Abonnez-vous pour recevoir nos actus :</p>
-              <div className="subscribe-form">
-                <input
-                  type="email"
-                  placeholder="Votre adresse mail..."
-                  className="subscribe-input"
-                />
-                <button className="btn-subscribe">S'inscrire</button>
-              </div>
-            </div>
-          </div>
-          <div className="footer-links">
-            <div className="footer-support">
-              <h4 className="footer-section-title">Support</h4>
-              <ul>
-                <li>Conditions générales</li>
-                <li>Mentions légales</li>
-                <li>Données personnelles</li>
-              </ul>
-            </div>
-            <div className="footer-social">
-              <h4 className="footer-section-title">Réseaux sociaux</h4>
-              <ul>
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>LinkedIn</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
