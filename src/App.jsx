@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Boutique from "./pages/Boutique";
-import Products from "./pages/Products";
+// import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import Engagements from "./pages/Engagements";
 import Inscription from "./pages/Inscription";
