@@ -22,6 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/engagements" element={<Engagements />} />
           <Route path="/inscription" element={<Inscription />} />
+          <Route path="/Products" element={<Products />} />
           <Route path="*" element={<div className="text-center">Page non trouvée</div>} />
         </Routes>
       </div>
