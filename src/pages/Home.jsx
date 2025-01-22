@@ -2,10 +2,10 @@ import React from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer';
 import '../css/Home.css';
+import { NavLink } from 'react-router-dom';
 import planchedebout from '../assets/images/planchedebout.png';
 import planchepov from '../assets/images/planchepov.png';
 import AccueilGroupe from '../assets/images/AccueilGroupe.png';
-
 import plancheblanche from  '../assets/planches/plancheblanche.png';
 
 export const Home = () => {
@@ -22,7 +22,9 @@ export const Home = () => {
             Surfez avec conscience,
             <br /> pour un avenir durable.
           </h1>
-          <button className="ctaButton">Découvrir nos planches</button>
+          <NavLink to="/Products">
+            <button className="ctaButton">Découvrir nos planches</button>
+          </NavLink>
         </div>
       </section>
 
@@ -39,7 +41,9 @@ export const Home = () => {
               />
               <h3 className="productTitle">Planche sunshine</h3>
               <p className="productPrice">400 €</p>
-              <button className="productButton">Voir plus</button>
+              <NavLink to="/Products">
+                <button className="productButton">Voir plus</button>
+              </NavLink>
             </div>
           ))}
         </div>
