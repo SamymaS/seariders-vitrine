@@ -1,6 +1,4 @@
 import React from "react";
-import "./Engagements.css";
-import "/src/css/engagements.css";
 import "/src/css/engagements.css";
 
 const Engagements = () => {
