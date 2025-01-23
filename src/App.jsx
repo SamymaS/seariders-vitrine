@@ -9,6 +9,7 @@ import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import Engagements from "./pages/Engagements";
 import Inscription from "./pages/Inscription";
+import ProductsCustom from "./pages/ProductsCustom";
 import Blog from "./pages/Blog";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/engagements" element={<Engagements />} />
           <Route path="/inscription" element={<Inscription />} />
+          <Route path="/ProductsCustom" element={<ProductsCustom />} />
           <Route path="*" element={<div className="text-center">Page non trouvée</div>} />
         </Routes>
       </div>
