@@ -2,11 +2,11 @@ import React from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer';
 import '../css/Home.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // <-- Import NavLink pour la navigation
 import planchedebout from '../assets/images/planchedebout.png';
 import planchepov from '../assets/images/planchepov.png';
 import AccueilGroupe from '../assets/images/AccueilGroupe.png';
-import plancheblanche from  '../assets/planches/plancheblanche.png';
+import plancheblanche from '../assets/planches/plancheblanche.png';
 
 export const Home = () => {
   return (
@@ -53,7 +53,7 @@ export const Home = () => {
       <section className="engagement">
         <div
           className="engagementImage"
-         style={{ backgroundImage: `url(${planchepov})` }}
+          style={{ backgroundImage: `url(${planchepov})` }}
         />
         <div className="engagementContent">
           <h2 className="sectionTitle">Notre engagement</h2>
@@ -82,21 +82,24 @@ export const Home = () => {
           Grâce au recyclage des déchets marins, nous créons des planches à voile qui protègent
           notre planète. Il est temps de surfer avec conscience.
         </p>
-        <button className="ctaButton">Personnaliser votre planche</button>
+        {/* Lien vers /ProductsCustom */}
+        <NavLink to="/ProductsCustom">
+          <button className="ctaButton">Personnaliser votre planche</button>
+        </NavLink>
       </section>
 
-          {/* Instagram Section */}
-        <section className="instagram">
-          <h2 className="sectionTitle">SUIVEZ-NOUS SUR INSTAGRAM !</h2>
-            <p className="instagramHandle">@seariders</p>
-            <div className="instagramImageWrapper">
-             <img
-                src={AccueilGroupe}
-                alt="Instagram banner"
-                className="instagramBanner"
-              />
-            </div>
-        </section>
+      {/* Instagram Section */}
+      <section className="instagram">
+        <h2 className="sectionTitle">SUIVEZ-NOUS SUR INSTAGRAM !</h2>
+        <p className="instagramHandle">@seariders</p>
+        <div className="instagramImageWrapper">
+          <img
+            src={AccueilGroupe}
+            alt="Instagram banner"
+            className="instagramBanner"
+          />
+        </div>
+      </section>
     </div>
   );
 };
