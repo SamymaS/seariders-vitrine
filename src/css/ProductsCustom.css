@@ -144,7 +144,7 @@ body {
 .finish-button {
   position: absolute;
   bottom: 20px;
-  right: 0px; /* Ajustement horizontal */
+  right: 70px; /* Ajustement horizontal */
   transform: translateY(-50%); /* Alignement vertical avec "3D" */
   padding: 10px 25px;
   background-color: #002855;
