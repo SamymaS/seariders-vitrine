@@ -1,28 +1,30 @@
-import React from 'react';
-import '../css/blog.css';
+import React from "react";
+import "../css/blog.css";
+
+// Import direct des images réelles
+import blog1 from "../assets/images/blog1.png";
+import blog2 from "../assets/images/blog2.png";
+import blog3 from "../assets/images/AccueilGroupe.png"; 
 
 const Blog = () => {
   const posts = [
     {
       id: 1,
       title: "Comment recycler les déchets marins ?",
-      excerpt:
-        "Découvrez comment nous transformons les déchets plastiques en planches à voile durables.",
-      image: "../assets/images/recycle_marine.jpg",
+      excerpt: "Découvrez comment nous transformons les déchets plastiques en planches à voile durables.",
+      image: blog1, 
     },
     {
       id: 2,
       title: "L'impact de la pollution sur les océans",
-      excerpt:
-        "Une analyse approfondie sur les effets des déchets plastiques sur la faune marine et comment les réduire.",
-      image: "../assets/images/ocean_pollution.jpg",
+      excerpt: "Une analyse approfondie sur les effets des déchets plastiques sur la faune marine.",
+      image: blog2, 
     },
     {
       id: 3,
       title: "La personnalisation des planches à voile",
-      excerpt:
-        "Exprimez votre style avec nos planches personnalisées, tout en restant écoresponsable.",
-      image: "../assets/images/custom_board.jpg",
+      excerpt: "Exprimez votre style avec nos planches personnalisées, tout en restant écoresponsable.",
+      image: blog3,
     },
   ];
 
@@ -33,8 +35,8 @@ const Blog = () => {
         <div className="hero-content">
           <h1>Bienvenue sur notre blog</h1>
           <p>
-            Explorez les dernières actualités, conseils et innovations autour de
-            la préservation de l'environnement marin et des sports nautiques.
+            Explorez les dernières actualités, conseils et innovations autour
+            de la préservation de l'environnement marin et des sports nautiques.
           </p>
         </div>
       </section>
@@ -45,11 +47,7 @@ const Blog = () => {
         <div className="posts-grid">
           {posts.map((post) => (
             <div key={post.id} className="post-card">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="post-image"
-              />
+              <img src={post.image} alt={post.title} className="post-image" />
               <div className="post-content">
                 <h3 className="post-title">{post.title}</h3>
                 <p className="post-excerpt">{post.excerpt}</p>
