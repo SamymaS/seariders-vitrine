@@ -1,8 +1,9 @@
 import React from "react";
+import "../css/Inscription.css"; // <-- On importe la feuille de style
 
 const Inscription = () => {
   return (
-    <div className="relative min-h-screen bg-[#FFFEFF]">
+    <div className="inscription-page relative min-h-screen bg-[#FFFEFF]">
       {/* Title */}
       <h2 className="text-center text-[40px] font-bold text-[#228EA0] mt-10">
         Inscription
@@ -102,23 +103,6 @@ const Inscription = () => {
           </a>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="w-full h-auto bg-[#013264] text-[#FFF8E9] p-6 mt-10">
-        <h3 className="uppercase font-bold text-center text-lg mb-4">
-          Abonnez-vous pour recevoir nos dernières actus et offres exclusives !
-        </h3>
-        <div className="max-w-lg mx-auto flex space-x-4">
-          <input
-            type="email"
-            placeholder="Votre adresse mail..."
-            className="flex-grow h-12 border border-[#FFF8E9] rounded-full px-4 bg-transparent text-[#FFF8E9]"
-          />
-          <button className="w-36 h-12 bg-[#FFF8E9] text-[#013264] font-semibold rounded-full">
-            S'inscrire
-          </button>
-        </div>
-      </footer>
     </div>
   );
 };
