@@ -1,0 +1,23 @@
+.inscription-page {
+  /* Un gris clair, par exemple */
+  background-color: #f5f5f5;
+
+  /* Pour qu'il s'étende sur toute la hauteur de la fenêtre */
+  min-height: 100vh;
+
+  /* Pour laisser de la place si le contenu dépasse */
+  padding-bottom: 4rem;
+}
+
+.inscription-form-container {
+  /* On force un fond blanc pour le formulaire */
+  background-color: #fff;
+  border-radius: 10px;
+
+  /* Une petite ombre */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  /* On peut laisser p-6 (Tailwind) 
+     ou définir ici plus précisément : */
+  padding: 1.5rem;
+}
