@@ -1,164 +1,62 @@
 import React from "react";
+import pageNotreEngagement from "../assets/images/pagenotreengagement.png";
+import materialsImage from "../assets/images/notreengagement.png"; 
+import sailboardImage from "../assets/images/pageengagement2.png"; 
+import recycledLogo from "../assets/logos/recycledsailboard.png"; 
+import '../css/Engagements.css';
 
 const Engagements = () => {
   return (
-    <div className="font-sans text-gray-800">
-      {/* Header */}
-      <header className="flex justify-between items-center px-6 py-4 bg-white shadow-md">
-        <h1 className="text-3xl font-bold text-orange-500">sea RIDERS</h1>
-        <nav>
-          <ul className="flex gap-6 text-gray-600">
-            <li className="hover:text-orange-500 cursor-pointer">ACCUEIL</li>
-            <li className="hover:text-orange-500 cursor-pointer">PRODUITS</li>
-            <li className="hover:text-orange-500 cursor-pointer">NOTRE ENGAGEMENT</li>
-            <li className="hover:text-orange-500 cursor-pointer">CONTACT</li>
-          </ul>
-        </nav>
-      </header>
+    <div className="engagements-container">
+      <div className="hero-section">
+        <img src={pageNotreEngagement} alt="Notre engagement" className="hero-image" />
+      </div>
+      
+      <div className="stats-section">
+        <div className="stat-item">
+          <div className="stat-number">360<span>kg</span></div>
+          <div className="stat-text">de déchets recyclés</div>
+        </div>
+        <div className="stat-item">
+          <div className="stat-number">80<span>kg</span></div>
+          <div className="stat-text">de CO2 évité</div>
+        </div>
+        <div className="stat-item">
+          <div className="stat-number">80<span>%</span></div>
+          <div className="stat-text">Moins polluant que la moyenne</div>
+        </div>
+      </div>
 
-      {/* Hero Section */}
-      <section className="relative text-white bg-gray-900">
-        <img
-          src="hero-image.jpg"
-          alt="Cleaning the sea"
-          className="w-full h-96 object-cover opacity-70"
-        />
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            UNE PRATIQUE DU WINDSURF <br />
-            <em className="italic text-gray-200">
-              PLUS RESPECTUEUSE DE L'ENVIRONNEMENT
-            </em>
-          </h2>
-          <div className="flex gap-8 mt-6">
-            <div className="text-center">
-              <p className="text-4xl font-bold">360kg</p>
-              <p>de déchets recyclés</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold">80kg</p>
-              <p>de co2 évité</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold">80%</p>
-              <p>de matière recyclée</p>
-            </div>
+      <div className="section white-section">
+        <div className="text-side">
+          <div className="text-content">
+            <h2>Matériaux<br />durable</h2>
+            <p>Nos planches à voiles sont fabriquées avec des matériaux recyclés pour que nous puissions ensemble naviguer sur des mers moins pollués.</p>
+            <p>Sea's Riders respecte l'environnement dans lequel nous et les autres peuvent s'amuser.</p>
+            <img src={recycledLogo} alt="Logo recyclé" className="recycled-logo" />
           </div>
         </div>
-      </section>
-
-      {/* Materials Section */}
-      <section className="py-12 bg-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-orange-500">Matériaux durable</h2>
-          <p className="mt-4 text-gray-600">
-            Nos planches à voile sont fabriquées avec des matériaux recyclés grâce
-            auxquels nous pouvons ensemble préserver la mer moins polluée. <br />
-            Sea Riders respecte l'environnement dans lequel nous et les autres peuvent s'amuser.
-          </p>
-          <img
-            src="recycled-plastic.jpg"
-            alt="Plastic being picked up"
-            className="w-3/4 mx-auto mt-6 rounded-lg shadow-md"
-          />
+        <div className="image-side">
+          <img src={materialsImage} alt="Matériaux durables" />
         </div>
-      </section>
+      </div>
 
-      {/* Innovation Section */}
-      <section className="py-12 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800">
-            Nous croyons en l'innovation et en la durabilité.
-          </h2>
-          <p className="text-gray-600 text-center mt-4">
-            Depuis toujours, nous avons développé des alliages uniques et innovants
-            pour la construction de nos planches à voile éco-responsables. En combinant
-            des matériaux recyclés et un processus écologique de fibre naturelle et de
-            résine, nous avons créé des produits performants et durables.
-          </p>
-          <p className="mt-6 p-4 bg-green-100 text-green-800 text-center rounded-lg">
-            EN CHOISISSANT UNE PLANCHE À VOILE SEA RIDERS, VOUS OPTEZ POUR UN PRODUIT
-            DE HAUTE QUALITÉ AVEC UN ENGAGEMENT INÉBRANLABLE POUR LA DURABILITÉ ENVIRONNEMENTALE.
-          </p>
+      <div className="section beige-section">
+        <div className="image-side">
+          <img src={sailboardImage} alt="Planche à voile" />
         </div>
-      </section>
-
-      {/* Events Section */}
-      <section className="py-12 bg-gray-50">
-        <h3 className="text-3xl font-bold text-center mb-6 text-gray-800">
-          Nos événements
-        </h3>
-        <div className="flex flex-wrap justify-center gap-6">
-          {[
-            { date: "13 AVRIL 2024", title: "Nettoyons le Sud", time: "9H - 11H" },
-            { date: "22 MAI 2024", title: "Pêche au crochet feat. LIME", time: "9H - 11H" },
-          ].map((event, index) => (
-            <div
-              key={index}
-              className="w-64 p-6 bg-white rounded-lg shadow-md text-center"
-            >
-              <h4 className="text-lg font-bold">{event.date}</h4>
-              <p className="mt-2 text-gray-600">{event.title}</p>
-              <span className="block mt-2 font-semibold">{event.time}</span>
-              <button className="mt-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">
-                Participer
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Partners Section */}
-      <section className="py-12 bg-white">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          Nos partenaires
-        </h2>
-        <div className="flex justify-center gap-12">
-          <img src="clean-my-calanques.jpg" alt="Partner 1" className="w-32" />
-          <img src="wings-of-the-ocean.jpg" alt="Partner 2" className="w-32" />
-          <img src="sea-cleaners.jpg" alt="Partner 3" className="w-32" />
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-orange-500 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <h2 className="text-2xl font-bold mb-6 md:mb-0">sea RIDERS</h2>
-            <div className="flex flex-col items-center md:items-end">
-              <p className="mb-2">Abonnez-vous pour recevoir nos actus :</p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Votre adresse mail..."
-                  className="p-2 rounded-l text-gray-800"
-                />
-                <button className="bg-gray-700 text-white px-4 py-2 rounded-r hover:bg-gray-600">
-                  S'inscrire
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-between mt-8">
-            <div>
-              <h4 className="font-bold">Support</h4>
-              <ul>
-                <li>Conditions générales</li>
-                <li>Mentions légales</li>
-                <li>Données personnelles</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold">Réseaux sociaux</h4>
-              <ul className="flex gap-4">
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>LinkedIn</li>
-              </ul>
-            </div>
+        <div className="text-side">
+          <div className="text-content">
+            <h2>Nous croyons en l'innovation et en la durabilité.</h2>
+            <p>C'est pourquoi nous avons développé des alliages uniques et innovants pour la construction de nos planches à voile éco-responsables. En combinant des matériaux recyclés récupérés dans les océans avec des fibres naturelles et des polymères de haute qualité, nous avons créé des alliages robustes et légers qui offrent à la fois performance et durabilité.</p>
+            <p>Nos planches à voile sont construites avec des alliages avancés qui résistent aux rigueurs de l'environnement marin tout en réduisant notre empreinte écologique. Chaque alliage est minutieusement conçu et testé pour garantir une rigidité optimale, une flottabilité exceptionnelle et une durabilité à long terme, assurant ainsi une expérience de navigation exceptionnelle pour les passionnés de windsurf de tous niveaux.</p>
           </div>
         </div>
-      </footer>
+      </div>
+
+      <div className="bottom-banner">
+        En choisissant une planche à voile Sea Riders, vous optez pour un produit de haute qualité fabriqué avec des matériaux de pointe et un engagement inébranlable envers la durabilité environnementale.
+      </div>
     </div>
   );
 };
