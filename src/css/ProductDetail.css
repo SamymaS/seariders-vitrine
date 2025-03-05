@@ -1,0 +1,178 @@
+/* ProductDetail.css */
+
+.product-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #013264;
+    padding: 20px;
+  }
+  
+  .detail-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  /* Colonne gauche (image) */
+  .detail-image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .detail-main-image {
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+  }
+  
+  /* Colonne droite (infos) */
+  .detail-info-section {
+    flex: 1;
+  }
+  
+  .detail-product-name {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .detail-subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff8064;
+    margin-bottom: 10px;
+  }
+  
+  .detail-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .detail-size {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .detail-price {
+    font-size: 24px;
+    color: #ff8064;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Couleurs */
+  .detail-colors {
+    margin-bottom: 20px;
+  }
+  
+  .detail-colors span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .detail-colors ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .detail-colors li {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    border-radius: 12px;
+  }
+  
+  /* Boutons */
+  .detail-button-add,
+  .detail-button-buy {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .detail-button-add {
+    background-color: #ff8064;
+    color: #fff;
+  }
+  
+  .detail-button-buy {
+    background-color: #013264;
+    color: #fff;
+  }
+  
+  .detail-shipping {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .detail-shipping-sub {
+    font-size: 12px;
+    color: #555;
+  }
+  
+  /* Accordéon */
+  .detail-accordion {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .accordion-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 16px;
+    align-items: center;
+  }
+  
+  .accordion-content {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+  }
+  
+  .product-not-found {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 18px;
+    color: red;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .detail-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .detail-main-image {
+      max-width: 300px;
+    }
+  }
+  
