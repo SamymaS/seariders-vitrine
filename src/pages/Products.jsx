@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // <-- Import Link
 import { FaShoppingCart } from "react-icons/fa";
 
 const products = [
@@ -32,6 +33,7 @@ const Products = () => {
             </select>
           </div>
         </div>
+
         <div className="products-grid">
           {products.map((product) => (
             <div key={product.id} className="product-card">
@@ -39,7 +41,11 @@ const Products = () => {
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.price} €</p>
-              <button>Découvrir</button>
+
+              {/* Lien vers /product/1, /product/2, etc. */}
+              <Link to={`/product/${product.id}`}>
+                <button>Découvrir</button>
+              </Link>
             </div>
           ))}
         </div>
