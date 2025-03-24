@@ -1,0 +1,249 @@
+/* Styles pour le panier */
+.cart-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.cart-title {
+  font-size: 2.2rem;
+  color: #002855;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cart-empty-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.cart-header {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  padding: 15px 0;
+  border-bottom: 2px solid #eee;
+  font-weight: bold;
+  color: #002855;
+}
+
+.cart-items {
+  margin: 20px 0;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-product {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-item-image {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cart-item-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #002855;
+}
+
+.cart-item-subtitle {
+  color: #FF8064;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cart-item-size {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.cart-item-price {
+  font-weight: bold;
+  color: #002855;
+  font-size: 1.1rem;
+}
+
+.cart-item-color {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.color-rouge {
+  background-color: #ff3b30;
+}
+
+.color-orange {
+  background-color: #ff9500;
+}
+
+.color-bleu {
+  background-color: #007aff;
+}
+
+.color-vert {
+  background-color: #34c759;
+}
+
+.color-noir {
+  background-color: #000;
+}
+
+.remove-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+}
+
+.cart-summary {
+  margin-top: 40px;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.cart-summary-details {
+  margin-bottom: 25px;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.cart-summary-total {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #002855;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.clear-cart-button {
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-cart-button:hover {
+  background-color: #555;
+}
+
+.continue-button {
+  background-color: #fff;
+  color: #FF8064;
+  border: 2px solid #FF8064;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.continue-button:hover {
+  background-color: #fff9f8;
+  transform: translateY(-2px);
+}
+
+.checkout-button {
+  background-color: #FF8064;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.checkout-button:hover {
+  background-color: #e3644d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.continue-shopping-link {
+  text-decoration: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cart-header {
+    display: none;
+  }
+  
+  .cart-item {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 0;
+  }
+  
+  .cart-item-product {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cart-item-color, 
+  .cart-item-price,
+  .cart-item-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cart-actions {
+    flex-direction: column;
+  }
+  
+  .continue-button,
+  .checkout-button,
+  .clear-cart-button {
+    width: 100%;
+  }
+}
