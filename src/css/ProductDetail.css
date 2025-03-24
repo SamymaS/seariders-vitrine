@@ -73,40 +73,116 @@
     margin-bottom: 10px;
   }
   
+  /* Message de confirmation */
+  .confirmation-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    animation: fadeInOut 3s ease-in-out;
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
   /* Couleurs */
   .detail-colors {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   
   .detail-colors span {
     font-weight: bold;
-    margin-right: 10px;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
   }
   
-  .detail-colors ul {
+  .color-selector {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    margin-top: 10px;
   }
   
-  .detail-colors li {
-    border: 1px solid #ccc;
-    padding: 4px 8px;
-    border-radius: 12px;
+  .color-option {
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.25s ease;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+  }
+  
+  .color-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .color-option:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .color-option.selected {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+    outline: 2px solid currentColor;
+  }
+  
+  .color-rouge {
+    background-color: #ff3b30;
+    border-color: #ff3b30;
+  }
+  
+  .color-bleu {
+    background-color: #007aff;
+    border-color: #007aff;
+  }
+  
+  .color-vert {
+    background-color: #34c759;
+    border-color: #34c759;
+  }
+  
+  .color-orange {
+    background-color: #ff9500;
+    border-color: #ff9500;
+  }
+  
+  .color-noir {
+    background-color: #000;
+    border-color: #000;
   }
   
   /* Boutons */
   .detail-button-add,
-  .detail-button-buy {
+  .detail-button-buy,
+  .detail-button-view-cart {
     display: inline-block;
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding: 12px 20px;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
   
   .detail-button-add {
@@ -114,9 +190,66 @@
     color: #fff;
   }
   
+  .detail-button-add::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 50%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+  }
+  
+  .detail-button-add.clicked::after {
+    animation: ripple 0.6s ease-out;
+  }
+  
+  .detail-button-add.in-cart {
+    background-color: #45a049;
+  }
+  
+  .detail-button-view-cart {
+    background-color: #fff;
+    color: #ff8064;
+    border: 2px solid #ff8064;
+  }
+  
+  .detail-button-view-cart:hover {
+    background-color: #fff9f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes ripple {
+    0% {
+      opacity: 1;
+      transform: scale(0, 0) translate(-50%, -50%);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(20, 20) translate(-50%, -50%);
+    }
+  }
+  
+  .detail-button-add:hover {
+    background-color: #e3644d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
   .detail-button-buy {
     background-color: #013264;
     color: #fff;
+  }
+  
+  .detail-button-buy:hover {
+    background-color: #01264b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .detail-shipping {
@@ -173,6 +306,11 @@
   
     .detail-main-image {
       max-width: 300px;
+    }
+    
+    .color-selector {
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
   
