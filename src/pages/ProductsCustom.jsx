@@ -1,10 +1,10 @@
 import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import * as THREE from "three";
+import PropTypes from 'prop-types';
 import "../css/ProductsCustom.css";
 
-// Composant de la planche à voile simplifié
+// Composant simplifié pour le modèle 3D de planche à voile
 const SimpleWindsurfModel = ({ 
   boardColor = "#FF8064", 
   mastColor = "#FFFFFF", 
@@ -14,17 +14,17 @@ const SimpleWindsurfModel = ({
 }) => {
   const groupRef = useRef();
   
-  // Animation
+  // Animation douce du modèle
   useFrame((state) => {
     if (groupRef.current) {
       const time = state.clock.getElapsedTime();
       groupRef.current.rotation.y = Math.sin(time * 0.1) * 0.1;
-      groupRef.current.position.y = Math.sin(time * 0.3) * 0.05 - 0.5;
+      groupRef.current.position.y = Math.sin(time * 0.3) * 0.05 - 0.4;
     }
   });
 
   return (
-    <group ref={groupRef} position={[0, 0, 0]}>
+    <group ref={groupRef} position={[0, 0, 0]} scale={0.85}>
       {/* Planche */}
       <mesh castShadow receiveShadow position={[0, 0, 0]}>
         <boxGeometry args={[0.8, 0.1, 3]} />
@@ -52,16 +52,25 @@ const SimpleWindsurfModel = ({
       {/* Voile */}
       <mesh castShadow position={[0, 1.5, 0.7]}>
         <boxGeometry args={[0.02, 2, 1.8]} />
-        <meshStandardMaterial color={sailColor} transparent={true} opacity={0.85} side={THREE.DoubleSide} />
+        <meshStandardMaterial color={sailColor} transparent={true} opacity={0.85} />
       </mesh>
 
       {/* Wishbone */}
       <mesh castShadow position={[0, 1.1, 1]}>
-        <cylinderGeometry args={[0.02, 0.02, 1.6, 12]} rotation={[Math.PI/2, 0, 0]} />
+        <cylinderGeometry args={[0.02, 0.02, 1.6, 12]} />
         <meshStandardMaterial color={boomColor} roughness={0.4} />
       </mesh>
     </group>
   );
+};
+
+// Validation des props
+SimpleWindsurfModel.propTypes = {
+  boardColor: PropTypes.string,
+  mastColor: PropTypes.string,
+  finColor: PropTypes.string,
+  sailColor: PropTypes.string,
+  boomColor: PropTypes.string
 };
 
 // Page principale
@@ -223,13 +232,19 @@ const ProductsCustom = () => {
           <Suspense fallback={<div className="loading">Chargement du modèle 3D...</div>}>
             <Canvas 
               shadows
-              camera={{ position: [0, 0, 5], fov: 50 }}
-              style={{ height: "100%", width: "100%" }}
+              camera={{ position: [0, 0, 4.5], fov: 45 }}
+              style={{ 
+                height: "100%", 
+                width: "100%",
+                maxHeight: "100%", 
+                position: "relative",
+                zIndex: 1
+              }}
             >
               <OrbitControls 
                 enablePan={false}
-                minDistance={2}
-                maxDistance={10}
+                minDistance={1.5}
+                maxDistance={8}
                 enableDamping={true}
                 dampingFactor={0.1}
               />
@@ -261,7 +276,7 @@ const ProductsCustom = () => {
                 position={[0, -0.6, 0]} 
                 receiveShadow
               >
-                <planeGeometry args={[10, 10]} />
+                <planeGeometry args={[8, 8]} />
                 <meshStandardMaterial color="#f0f0f0" />
               </mesh>
             </Canvas>
