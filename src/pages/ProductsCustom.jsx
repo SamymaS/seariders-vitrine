@@ -1,71 +1,275 @@
-import React, { useState } from "react";
-import { FaSlidersH } from "react-icons/fa";
+import { useState, useRef, Suspense } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import * as THREE from "three";
+import "../css/ProductsCustom.css";
 
+// Composant de la planche à voile simplifié
+const SimpleWindsurfModel = ({ 
+  boardColor = "#FF8064", 
+  mastColor = "#FFFFFF", 
+  finColor = "#013264", 
+  sailColor = "#4A90E2",
+  boomColor = "#333333",
+}) => {
+  const groupRef = useRef();
+  
+  // Animation
+  useFrame((state) => {
+    if (groupRef.current) {
+      const time = state.clock.getElapsedTime();
+      groupRef.current.rotation.y = Math.sin(time * 0.1) * 0.1;
+      groupRef.current.position.y = Math.sin(time * 0.3) * 0.05 - 0.5;
+    }
+  });
+
+  return (
+    <group ref={groupRef} position={[0, 0, 0]}>
+      {/* Planche */}
+      <mesh castShadow receiveShadow position={[0, 0, 0]}>
+        <boxGeometry args={[0.8, 0.1, 3]} />
+        <meshStandardMaterial color={boardColor} roughness={0.2} metalness={0.1} />
+      </mesh>
+
+      {/* Dérive centrale */}
+      <mesh castShadow position={[0, -0.1, 0.2]}>
+        <boxGeometry args={[0.1, 0.3, 0.8]} />
+        <meshStandardMaterial color={finColor} roughness={0.4} />
+      </mesh>
+
+      {/* Aileron arrière */}
+      <mesh castShadow position={[0, -0.1, -1.2]}>
+        <boxGeometry args={[0.08, 0.2, 0.4]} />
+        <meshStandardMaterial color={finColor} roughness={0.4} />
+      </mesh>
+
+      {/* Mât */}
+      <mesh castShadow position={[0, 1.5, 0.5]}>
+        <cylinderGeometry args={[0.03, 0.03, 3, 12]} />
+        <meshStandardMaterial color={mastColor} roughness={0.3} />
+      </mesh>
+
+      {/* Voile */}
+      <mesh castShadow position={[0, 1.5, 0.7]}>
+        <boxGeometry args={[0.02, 2, 1.8]} />
+        <meshStandardMaterial color={sailColor} transparent={true} opacity={0.85} side={THREE.DoubleSide} />
+      </mesh>
+
+      {/* Wishbone */}
+      <mesh castShadow position={[0, 1.1, 1]}>
+        <cylinderGeometry args={[0.02, 0.02, 1.6, 12]} rotation={[Math.PI/2, 0, 0]} />
+        <meshStandardMaterial color={boomColor} roughness={0.4} />
+      </mesh>
+    </group>
+  );
+};
+
+// Page principale
 const ProductsCustom = () => {
+  // États pour les différentes parties personnalisables
   const [visibleSection, setVisibleSection] = useState(null);
+  const [boardColor, setBoardColor] = useState("#FF8064");
+  const [sailColor, setSailColor] = useState("#4A90E2");
+  const [finColor, setFinColor] = useState("#013264");
+  const [mastColor, setMastColor] = useState("#FFFFFF");
+  const [boomColor, setBoomColor] = useState("#333333");
+
+  // Configuration des sections et options de personnalisation
+  const sections = [
+    { 
+      name: "Voile", 
+      colors: [
+        { name: "Bleu", value: "#4A90E2" },
+        { name: "Rouge", value: "#FF3B30" },
+        { name: "Vert", value: "#34C759" },
+        { name: "Jaune", value: "#FFCC00" },
+        { name: "Blanc", value: "#FFFFFF" }
+      ],
+      setter: setSailColor,
+      current: sailColor
+    },
+    { 
+      name: "Planche", 
+      colors: [
+        { name: "Orange", value: "#FF8064" },
+        { name: "Bleu", value: "#007AFF" },
+        { name: "Vert", value: "#28CD41" },
+        { name: "Rouge", value: "#FF3A2D" },
+        { name: "Noir", value: "#1D1D1F" }
+      ],
+      setter: setBoardColor,
+      current: boardColor
+    },
+    { 
+      name: "Mât", 
+      colors: [
+        { name: "Blanc", value: "#FFFFFF" },
+        { name: "Gris", value: "#8E8E93" },
+        { name: "Noir", value: "#1D1D1F" }
+      ],
+      setter: setMastColor,
+      current: mastColor
+    },
+    { 
+      name: "Dérive", 
+      colors: [
+        { name: "Bleu marine", value: "#013264" },
+        { name: "Gris", value: "#636366" },
+        { name: "Noir", value: "#000000" }
+      ],
+      setter: setFinColor,
+      current: finColor
+    },
+    { 
+      name: "Wishbone", 
+      colors: [
+        { name: "Noir", value: "#333333" },
+        { name: "Gris", value: "#8E8E93" },
+        { name: "Argent", value: "#C4C4C4" }
+      ],
+      setter: setBoomColor,
+      current: boomColor
+    },
+    { 
+      name: "Aileron", 
+      colors: [
+        { name: "Bleu marine", value: "#013264" },
+        { name: "Gris", value: "#636366" },
+        { name: "Noir", value: "#000000" }
+      ],
+      setter: setFinColor,
+      current: finColor
+    }
+  ];
 
   const toggleSection = (section) => {
     setVisibleSection(visibleSection === section ? null : section);
   };
 
-  const sections = [
-    { name: "Voile", colors: ["Blanc", "Jaune", "Vert", "Noir", "Rouge"] },
-    { name: "Planche", colors: ["Bleu", "Orange", "Gris", "Rose"] },
-    { name: "Mat", colors: ["Argent", "Noir", "Doré"] },
-    { name: "Dérive", colors: ["Vert", "Bleu", "Rouge"] },
-    { name: "Wishbone", colors: ["Jaune", "Noir", "Blanc"] },
-    { name: "Pied de mat", colors: ["Noir", "Gris", "Blanc"] },
-    { name: "Aileron", colors: ["Bleu", "Vert", "Rouge"] },
-    { name: "Tire-veille", colors: ["Rouge", "Bleu", "Gris"] },
-  ];
+  // Pour sauvegarder la configuration
+  const handleFinish = () => {
+    const config = {
+      boardColor,
+      sailColor,
+      finColor,
+      mastColor,
+      boomColor
+    };
+    
+    alert("Configuration enregistrée !\n" + JSON.stringify(config, null, 2));
+    // Ici on pourrait rediriger vers le panier ou la page de commande
+  };
 
   return (
     <div className="customisation-page">
-      <header className="header">
-        <div className="filter-container">
-          <div className="filter-buttons">
-            <button>Nos voiles</button>
-            <button>Nos planches</button>
-            <button>Ailerons</button>
-            <button>Mâts</button>
-            <button className="icon-button">
-              <FaSlidersH /> Afficher les filtres
-            </button>
+      <header className="custom-header">
+        <h1 className="custom-title">Personnalisez votre planche</h1>
+        <div className="mode-3d-container">
+          <div className="view-mode">
+            <span className="view-mode-label">Mode 3D</span>
           </div>
-          <button className="button-3d">3D</button>
         </div>
       </header>
 
-      <div className="main-container">
-        <aside className="customisation-sidebar">
+      <div className="custom-main-container">
+        <aside className="custom-sidebar">
+          <h2 className="sidebar-title">Options de personnalisation</h2>
+          
           {sections.map((section, index) => (
-            <div key={index} className="customisation-section">
+            <div key={index} className="custom-section">
               <button
-                className="customisation-button"
+                className={`section-button ${visibleSection === section.name ? 'active' : ''}`}
                 onClick={() => toggleSection(section.name)}
               >
-                {section.name} <span className="plus-icon">+</span>
+                {section.name} 
+                <span className="toggle-icon">{visibleSection === section.name ? '−' : '+'}</span>
               </button>
+              
               {visibleSection === section.name && (
-                <div className="colors-container">
+                <div className="color-options">
                   {section.colors.map((color, colorIndex) => (
-                    <div key={colorIndex} className="color-item">
-                      {color}
+                    <div 
+                      key={colorIndex} 
+                      className={`color-option ${section.current === color.value ? 'selected' : ''}`}
+                      style={{ backgroundColor: color.value }}
+                      onClick={() => section.setter(color.value)}
+                      title={color.name}
+                    >
+                      <span className="color-name">{color.name}</span>
                     </div>
                   ))}
                 </div>
               )}
             </div>
           ))}
+          
+          <div className="custom-actions">
+            <button className="reset-button" onClick={() => {
+              setBoardColor("#FF8064");
+              setSailColor("#4A90E2");
+              setFinColor("#013264");
+              setMastColor("#FFFFFF");
+              setBoomColor("#333333");
+            }}>
+              Réinitialiser
+            </button>
+            <button className="finish-button" onClick={handleFinish}>
+              Terminer
+            </button>
+          </div>
         </aside>
 
-        <main className="main-content">
-          <img
-            src="./assets/planches/plancherouge.png"
-            alt=""
-            className="product-image"
-          />
-          <button className="finish-button">Terminer</button>
+        <main className="custom-3d-view">
+          <Suspense fallback={<div className="loading">Chargement du modèle 3D...</div>}>
+            <Canvas 
+              shadows
+              camera={{ position: [0, 0, 5], fov: 50 }}
+              style={{ height: "100%", width: "100%" }}
+            >
+              <OrbitControls 
+                enablePan={false}
+                minDistance={2}
+                maxDistance={10}
+                enableDamping={true}
+                dampingFactor={0.1}
+              />
+              
+              <ambientLight intensity={0.6} />
+              <directionalLight 
+                position={[10, 10, 5]} 
+                intensity={1} 
+                castShadow
+              />
+              <spotLight
+                position={[-5, 5, 5]}
+                intensity={0.7}
+                angle={0.3}
+                penumbra={0.5}
+                castShadow
+              />
+              
+              <SimpleWindsurfModel 
+                boardColor={boardColor}
+                sailColor={sailColor}
+                finColor={finColor}
+                mastColor={mastColor}
+                boomColor={boomColor}
+              />
+              
+              <mesh 
+                rotation={[-Math.PI / 2, 0, 0]} 
+                position={[0, -0.6, 0]} 
+                receiveShadow
+              >
+                <planeGeometry args={[10, 10]} />
+                <meshStandardMaterial color="#f0f0f0" />
+              </mesh>
+            </Canvas>
+          </Suspense>
+          
+          <div className="view-instructions">
+            <p>Cliquez et faites glisser pour faire pivoter la vue • Utilisez la molette pour zoomer</p>
+          </div>
         </main>
       </div>
     </div>
