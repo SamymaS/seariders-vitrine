@@ -1,137 +1,70 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Import du composant Link
+import { Link } from "react-router-dom";
+import logoBlanc from "../assets/logos/logoblanc.png";
+import facebook from "../assets/logos/facebook.png";
+import instagram from "../assets/logos/instagram.png";
+import linkedin from "../assets/logos/linkedin.png";
+import "../css/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#013264] text-[#FFF8E9] py-10">
-      <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between">
-        {/* Section Logo et Description */}
-        <div className="mb-6 md:mb-0">
-          <div className="flex items-center mb-8">
-            <div>
-              <a href="/" target="_blank" rel="noopener noreferrer">
-                <img src="src/assets/logos/logoblanc.png" alt="seariders" />
-              </a>
+    <footer className="footer-container">
+      <div className="footer-content">
+        <div className="footer-columns">
+          <div className="footer-logo-column">
+            <Link to="/">
+              <img src={logoBlanc} alt="Sea Riders" className="footer-logo" />
+            </Link>
+          </div>
+          
+          <div className="footer-links-column">
+            <h3>SUPPORT</h3>
+            <ul>
+              <li><Link to="/conditions-generales">Conditions générales</Link></li>
+              <li><Link to="/mentions-legales">Mentions légales</Link></li>
+              <li><Link to="/donnees-personnelles">Données personnelles</Link></li>
+              <li><Link to="/cookies">Gestion des cookies</Link></li>
+            </ul>
+          </div>
+          
+          <div className="footer-links-column">
+            <h3>INFORMATION</h3>
+            <ul>
+              <li><Link to="/">Accueil</Link></li>
+              <li><Link to="/Products">Boutique</Link></li>
+              <li><Link to="/engagements">Notre engagement</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/cart">Panier</Link></li>
+              <li><Link to="/compte">Compte</Link></li>
+            </ul>
+          </div>
+          
+          <div className="footer-social-column">
+            <div className="social-section">
+              <h3>RÉSEAUX SOCIAUX</h3>
+              <div className="social-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                  <img src={facebook} alt="Facebook" />
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                  <img src={instagram} alt="Instagram" />
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <img src={linkedin} alt="LinkedIn" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="payment-section">
+              <h3>MOYEN DE PAIEMENT</h3>
+              <div className="payment-icons">
+                <div className="payment-card visa"></div>
+                <div className="payment-card mastercard"></div>
+                <div className="payment-card amex"></div>
+                <div className="payment-card paypal"></div>
+              </div>
             </div>
           </div>
-          <p className="text-sm">
-            Abonnez-vous pour recevoir nos dernières actus et offres exclusives !
-          </p>
         </div>
-
-        {/* Navigation Links */}
-        <div className="mb-6 md:mb-0">
-          <h3 className="font-bold uppercase mb-4">Navigation</h3>
-          <ul className="space-y-2">
-            <li>
-              <a href="/" className="hover:underline">
-                Accueil
-              </a>
-            </li>
-            <li>
-              <a href="/boutique" className="hover:underline">
-                Boutique
-              </a>
-            </li>
-            <li>
-              <a href="/engagements" className="hover:underline">
-                Notre engagement
-              </a>
-            </li>
-            <li>
-              <a href="/contact" className="hover:underline">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Informations */}
-        <div className="mb-6 md:mb-0">
-          <h3 className="font-bold uppercase mb-4">Informations</h3>
-          <ul className="space-y-2">
-            <li>
-              <a href="/mentions-legales" className="hover:underline">
-                Mentions légales
-              </a>
-            </li>
-            <li>
-              <a href="/conditions-generales" className="hover:underline">
-                Conditions générales
-              </a>
-            </li>
-            <li>
-              <a href="/donnees-personnelles" className="hover:underline">
-                Données personnelles
-              </a>
-            </li>
-            <li>
-              <a href="/cookies" className="hover:underline">
-                Gestion des cookies
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Réseaux sociaux */}
-        <div>
-          <h3 className="font-bold uppercase mb-4">Réseaux sociaux</h3>
-          <div className="flex space-x-4">
-            <a
-              href="https://www.facebook.com/profile.php?id=61569793041689"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="src/assets/logos/facebook.png"
-                alt="Facebook"
-                className="w-8 h-8"
-              />
-            </a>
-
-            <a
-              href="https://www.instagram.com/_sea_riders_/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="src/assets/logos/instagram.png"
-                alt="Instagram"
-                className="w-8 h-8"
-              />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/sea-riders-7a882333a/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="src/assets/logos/linkedin.png"
-                alt="LinkedIn"
-                className="w-8 h-8"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Newsletter */}
-      <div className="container mx-auto px-6 mt-10">
-        <form className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-          <input
-            type="email"
-            placeholder="Votre adresse mail..."
-            className="flex-grow h-12 border border-[#FFF8E9] rounded-full px-4 bg-transparent text-[#FFF8E9] placeholder-[#FFF8E9]"
-          />
-          {/* Bouton redirigeant vers la page Inscription */}
-          <Link
-            to="/inscription"
-            className="w-36 h-12 bg-[#FFF8E9] text-[#013264] font-semibold rounded-full flex items-center justify-center"
-          >
-            S'inscrire
-          </Link>
-        </form>
       </div>
     </footer>
   );
