@@ -13,9 +13,12 @@ body {
 
 .customisation-page {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 200px);
   background-color: #f8f9fa;
   padding: 20px;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 1;
 }
 
 /* En-tête */
@@ -23,11 +26,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .custom-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #013264;
   font-weight: bold;
 }
@@ -50,41 +53,44 @@ body {
 /* Layout principal */
 .custom-main-container {
   display: flex;
-  gap: 20px;
-  height: calc(100vh - 150px);
+  gap: 15px;
+  height: calc(100vh - 250px);
+  max-height: 650px;
 }
 
 /* Barre latérale d'options */
 .custom-sidebar {
-  width: 300px;
+  width: 320px;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 15px;
   overflow-y: auto;
   max-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-title {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
   color: #013264;
   font-weight: bold;
 }
 
 .custom-section {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   border-bottom: 1px solid #eee;
-  padding-bottom: 15px;
+  padding-bottom: 12px;
 }
 
 .section-button {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   background: none;
   border: none;
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #333;
   cursor: pointer;
   display: flex;
@@ -105,14 +111,14 @@ body {
 .color-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-  padding: 10px 0;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px 0;
 }
 
 .color-option {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   cursor: pointer;
   position: relative;
@@ -131,11 +137,11 @@ body {
 
 .color-name {
   position: absolute;
-  bottom: -25px;
+  bottom: -22px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   background-color: #333;
   color: white;
   padding: 2px 6px;
@@ -152,8 +158,10 @@ body {
 
 .custom-actions {
   display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 15px;
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 .reset-button, .finish-button {
@@ -193,7 +201,8 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  min-height: 600px;
+  min-height: 450px;
+  max-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,12 +223,12 @@ body {
 
 .view-instructions {
   position: absolute;
-  bottom: 15px;
+  bottom: 10px;
   left: 0;
   width: 100%;
   text-align: center;
   color: #888;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 /* Styles pour les couleurs prédéfinies */
@@ -248,14 +257,20 @@ body {
   .custom-main-container {
     flex-direction: column;
     height: auto;
+    max-height: none;
   }
   
   .custom-sidebar {
     width: 100%;
-    max-height: none;
+    max-height: 400px;
   }
   
   .custom-3d-view {
-    min-height: 400px;
+    min-height: 350px;
+    max-height: 400px;
+  }
+
+  .customisation-page {
+    margin-bottom: 80px;
   }
 }
