@@ -1,0 +1,174 @@
+/* Footer.css */
+.footer-container {
+  background-color: #013264;
+  color: white;
+  padding: 25px 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.footer-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Columns layout */
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.footer-logo-column .footer-logo {
+  height: 60px;
+  width: auto;
+  margin-top: 10px;
+}
+
+/* Links columns */
+.footer-links-column h3,
+.footer-social-column h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.footer-links-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links-column ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-links-column ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Social column */
+.social-section {
+  margin-bottom: 25px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Payment section */
+.payment-section h3 {
+  margin-bottom: 15px;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.payment-card {
+  width: 50px;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* VISA */
+.payment-card.visa::before {
+  content: "VISA";
+  color: #1A1F71;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+/* MasterCard */
+.payment-card.mastercard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-card.mastercard::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #EB001B;
+  border-radius: 50%;
+  left: 12px;
+}
+
+.payment-card.mastercard::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #F79E1B;
+  border-radius: 50%;
+  right: 12px;
+  z-index: 1;
+}
+
+/* American Express */
+.payment-card.amex::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background-color: #016FD0;
+  border-radius: 3px;
+}
+
+.payment-card.amex::after {
+  content: "AMEX";
+  position: relative;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* PayPal */
+.payment-card.paypal::before {
+  content: "PayPal";
+  color: #003087;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+} 
