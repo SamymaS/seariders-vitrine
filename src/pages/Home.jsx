@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar.jsx';
-import Footer from '../components/Footer';
 import '../css/Home.css';
 import { NavLink } from 'react-router-dom'; // <-- Import NavLink pour la navigation
 import planchedebout from '../assets/images/planchedebout.png';
