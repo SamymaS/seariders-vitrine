@@ -2,97 +2,181 @@
 .footer-container {
   background-color: #013264;
   color: white;
-  padding: 25px 0;
-  width: 100%;
-  z-index: 50;
+  padding: 30px 0;
 }
 
 .footer-content {
-  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-/* Columns layout */
-.footer-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 30px;
+/* Logo */
+.footer-logo {
+  width: 120px;
+  flex-shrink: 0;
 }
 
-.footer-logo-column .footer-logo {
+.footer-logo img {
   height: 60px;
-  width: auto;
-  margin-top: 10px;
 }
 
-/* Links columns */
-.footer-links-column h3,
-.footer-social-column h3 {
+/* Newsletter section */
+.footer-newsletter {
+  max-width: 300px;
+  flex-shrink: 0;
+}
+
+.footer-newsletter h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.newsletter-form {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #fff;
+  border-radius: 20px 0 0 20px;
+  background-color: transparent;
+  color: white;
+  height: 37px;
+  box-sizing: border-box;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Style pour le lien qui entoure le bouton */
+.newsletter-form a {
+  display: flex;
+  align-items: stretch;
+}
+
+.newsletter-form button {
+  padding: 8px 15px;
+  background-color: white;
+  color: #013264;
+  border: 1px solid white;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  height: 37px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+/* Links section */
+.footer-links-section {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  min-width: 0;
+  gap: 40px;
+}
+
+.footer-column {
+  min-width: 0;
+  flex: 1;
+}
+
+/* Spécifique à la colonne SUPPORT pour la décaler légèrement */
+.footer-column:first-child {
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.footer-column:last-child {
+  margin-right: 0;
+}
+
+.footer-column h3 {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 15px;
-  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
-.footer-links-column ul {
+.footer-column ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-links-column ul li {
+.footer-column ul li {
   margin-bottom: 8px;
 }
 
-.footer-links-column ul li a {
+.footer-column ul li a {
   color: white;
   text-decoration: none;
   font-size: 13px;
 }
 
-.footer-links-column ul li a:hover {
+.footer-column ul li a:hover {
   text-decoration: underline;
 }
 
-/* Social column */
-.social-section {
+/* Container pour les réseaux sociaux et moyens de paiement */
+.right-cols-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Social icons */
+.socials-payments-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.socials-section {
   margin-bottom: 25px;
 }
 
 .social-icons {
   display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-.social-icon-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 15px;
 }
 
 .social-icon {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+  width: 24px;
+  height: 24px;
 }
 
-/* Payment section */
-.payment-section h3 {
-  margin-bottom: 15px;
+/* Payment cards */
+.payments-section {
+  margin-top: 15px;
 }
 
 .payment-icons {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
 .payment-card {
-  width: 50px;
-  height: 30px;
+  width: 40px;
+  height: 25px;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   position: relative;
   display: flex;
   align-items: center;
@@ -104,9 +188,8 @@
   content: "VISA";
   color: #1A1F71;
   font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-size: 10px;
   font-weight: bold;
-  letter-spacing: -0.5px;
 }
 
 /* MasterCard */
@@ -119,42 +202,31 @@
 .payment-card.mastercard::before {
   content: "";
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   background-color: #EB001B;
   border-radius: 50%;
-  left: 12px;
+  left: 10px;
 }
 
 .payment-card.mastercard::after {
   content: "";
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   background-color: #F79E1B;
   border-radius: 50%;
-  right: 12px;
+  right: 10px;
   z-index: 1;
 }
 
 /* American Express */
 .payment-card.amex::before {
-  content: "";
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  background-color: #016FD0;
-  border-radius: 3px;
-}
-
-.payment-card.amex::after {
   content: "AMEX";
-  position: relative;
-  color: white;
+  color: #016FD0;
   font-family: Arial, sans-serif;
   font-size: 9px;
   font-weight: bold;
-  z-index: 2;
 }
 
 /* PayPal */
@@ -163,20 +235,47 @@
   color: #003087;
   font-family: Arial, sans-serif;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
-  .footer-columns {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .footer-logo,
+  .footer-newsletter {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  .footer-links-section {
+    flex-wrap: wrap;
+    width: 100%;
     gap: 30px;
+  }
+  
+  .footer-column {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  
+  .footer-column:first-child {
+    margin-left: 0;
   }
 }
 
-@media (max-width: 480px) {
-  .footer-columns {
-    grid-template-columns: 1fr;
-    gap: 30px;
+/* For very small screens */
+@media (max-width: 576px) {
+  .footer-column {
+    width: 100%;
+  }
+  
+  .footer-links-section {
+    gap: 20px;
   }
 } 
