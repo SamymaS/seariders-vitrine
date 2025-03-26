@@ -194,7 +194,7 @@ const Navbar = () => {
           </NavLink>
 
           {/* User Account Button */}
-          <NavLink to="/mon-compte">
+          <NavLink to="/profile">
             <button className="flex items-center justify-center w-8 h-8" aria-label="Mon compte">
               <img src={userIcon} alt="User Account" className="h-6 w-6" />
             </button>
