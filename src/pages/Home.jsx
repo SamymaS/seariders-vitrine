@@ -6,6 +6,7 @@ import planchepov from '../assets/images/planchepov.png';
 import AccueilGroupe from '../assets/images/AccueilGroupe.png';
 import plancheblanche from '../assets/planches/plancheblanche.png';
 import planchebleu from '../assets/planches/planchebleu.png';
+import logopassion from '../assets/images/logopassion.png';
 import { FiShoppingCart } from 'react-icons/fi';
 
 export const Home = () => {
@@ -53,44 +54,76 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* Passion Section */}
+      <section className="passion-section">
+        <div className="passion-content">
+          <img src={logopassion} alt="Logo Seariders" className="passion-logo" />
+          <h2 className="passion-title">Vague de passion<br />dans</h2>
+          <p className="passion-subtitle">une mer de<br />changement</p>
+        </div>
+        <div 
+          className="passion-image"
+          style={{ backgroundImage: `url(${planchepov})` }}
+        ></div>
+      </section>
+
       {/* Engagement Section */}
       <section className="engagement">
-        <div
-          className="engagementImage"
-          style={{ backgroundImage: `url(${planchepov})` }}
-        />
-        <div className="engagementContent">
-          <h2 className="sectionTitle">Notre engagement</h2>
-          <div className="stats">
-            <div className="stat">
-              <span className="statNumber">360 kg</span>
-              <span className="statLabel">de déchets recyclés</span>
+        <h2 className="engagement-title">Notre engagement</h2>
+        <div className="engagement-stats">
+          <div className="stat-item">
+            <div className="stat-number-container">
+              <span className="stat-number">360</span>
+              <span className="stat-unit">kg</span>
             </div>
-            <div className="stat">
-              <span className="statNumber">80 kg</span>
-              <span className="statLabel">de CO2 émis</span>
-            </div>
-            <div className="stat">
-              <span className="statNumber">80%</span>
-              <span className="statLabel">Moins polluant que la moyenne</span>
-            </div>
+            <p className="stat-label">de déchets recyclés</p>
           </div>
-          <button className="ctaButton">En savoir plus</button>
+          <div className="stat-item">
+            <div className="stat-number-container">
+              <span className="stat-number">80</span>
+              <span className="stat-unit">kg</span>
+            </div>
+            <p className="stat-label">de CO2 émis</p>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number-container">
+              <span className="stat-number">80</span>
+              <span className="stat-unit">%</span>
+            </div>
+            <p className="stat-label">Moins polluant que la moyenne</p>
+          </div>
         </div>
+        <button className="engagement-button">En savoir plus</button>
       </section>
 
       {/* Vision Section */}
       <section className="vision">
         <h2 className="sectionTitle">Une nouvelle vision pour nos océans</h2>
         <p className="visionText">
-          Grâce au recyclage des déchets marins, nous créons des planches à voile qui protègent
-          notre planète. Il est temps de surfer avec conscience.
+          Grâce au recyclage des déchets marins, nous créons des planches à voile qui protègent notre planète. Il est temps de surfer avec conscience.
         </p>
-        {/* Lien vers /ProductsCustom */}
-        <NavLink to="/ProductsCustom">
-          <button className="ctaButton">Personnaliser votre planche</button>
-        </NavLink>
       </section>
+
+      <section className="customization-section">
+        <div className="customization-content">
+          <h2>Personnaliser votre planche</h2>
+          <button className="customize-btn">Personnaliser</button>
+        </div>
+        <div className="customization-image">
+          <img src="/images/customization.jpg" alt="Personnalisation de planche" />
+        </div>
+      </section>
+
+      <div className="wave-banner">
+        <div className="wave-text">
+          <span>WAVE</span>
+          <span>WAVE</span>
+          <span>WAVE</span>
+          <span>WAVE</span>
+          <span>WAVE</span>
+          <span>WAVE</span>
+        </div>
+      </div>
 
       {/* Instagram Section */}
       <section className="instagram">
