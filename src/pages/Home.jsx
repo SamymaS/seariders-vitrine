@@ -14,17 +14,17 @@ export const Home = () => {
   return (
     <div className="homePage">
       {/* Hero Section */}
-      <section
-        className="hero"
-        style={{ backgroundImage: `url(${planchedebout})` }}
-      >
+      <section className="hero">
+        <div className="hero-image-container">
+          <img src={planchedebout} alt="Surfeur avec planche" className="hero-background" />
+        </div>
         <div className="heroContent">
           <h1 className="heroTitle">
-            Surfez avec conscience,
-            <br /> pour un avenir durable.
+            SURFEZ AVEC CONSCIENCE,<br />
+            POUR UN AVENIR DURABLE.
           </h1>
           <NavLink to="/Products">
-            <button className="ctaButton">Découvrir nos planches</button>
+            <button className="ctaButton">DÉCOUVRIR NOS PLANCHES</button>
           </NavLink>
         </div>
       </section>
