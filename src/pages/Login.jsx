@@ -1,6 +1,7 @@
 import "../css/Login.css";
 import loginImg from "../assets/images/profile.png";
-import { Link, useNavigate, useState } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Modal from "../components/Modal";
 
 const Login = () => {
