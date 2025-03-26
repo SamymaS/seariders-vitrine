@@ -13,6 +13,8 @@ import ProductsCustom from "./pages/ProductsCustom";
 import Blog from "./pages/Blog";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import Profile from "./pages/Profile";
+import Login from "./pages/Login";
 
 // NOUVEAU : on importe ProductDetail
 import ProductDetail from "./pages/ProductDetail";
@@ -42,6 +44,8 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/engagements" element={<Engagements />} />
               <Route path="/inscription" element={<Inscription />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/ProductsCustom" element={<ProductsCustom />} />
               <Route path="*" element={<div className="text-center">Page non trouvée</div>} />
             </Routes>
