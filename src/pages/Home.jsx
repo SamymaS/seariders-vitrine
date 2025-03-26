@@ -5,6 +5,8 @@ import planchedebout from '../assets/images/planchedebout.png';
 import planchepov from '../assets/images/planchepov.png';
 import AccueilGroupe from '../assets/images/AccueilGroupe.png';
 import plancheblanche from '../assets/planches/plancheblanche.png';
+import planchebleu from '../assets/planches/planchebleu.png';
+import { FiShoppingCart } from 'react-icons/fi';
 
 export const Home = () => {
   return (
@@ -28,20 +30,24 @@ export const Home = () => {
 
       {/* Nouveautés Section */}
       <section className="nouveautes">
-        <h2 className="sectionTitle">Nouveautés</h2>
+        <div className="sectionTitle">
+          <h2>Nouveautés</h2>
+          <NavLink to="/Products" className="voir-plus-link">
+            Voir plus
+          </NavLink>
+        </div>
         <div className="productGrid">
           {[1, 2, 3, 4].map((_, index) => (
             <div key={index} className="productCard">
+              <FiShoppingCart className="cart-icon" />
               <img
-                src={plancheblanche}
-                alt={`Planche sunshine ${index + 1}`}
+                src={index < 2 ? plancheblanche : planchebleu}
+                alt="Planche sunshine"
                 className="productImage"
               />
               <h3 className="productTitle">Planche sunshine</h3>
               <p className="productPrice">400 €</p>
-              <NavLink to="/Products">
-                <button className="productButton">Voir plus</button>
-              </NavLink>
+              <button className="productButton">Découvrir</button>
             </div>
           ))}
         </div>
