@@ -1,6 +1,7 @@
 import "../css/Inscription.css";
 import inscriptionImg from "../assets/images/inscription.png";
-import { useNavigate, useState } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Modal from "../components/Modal";
 
 const Inscription = () => {
