@@ -185,57 +185,116 @@
 
 /* Engagement Section */
 .engagement {
+  padding: 60px 0;
+  background-color: white;
+  text-align: center;
+}
+
+.engagement-title {
+  color: #002855;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.engagement-stats {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 160px;
+  margin: 0 auto 60px;
+  padding: 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
-  background-color: #e8f4ff;
-}
-
-.engagementImage {
-  flex: 1;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-}
-
-.engagementContent {
-  flex: 1;
-  padding: 1rem;
   text-align: center;
 }
 
-.stats {
+.stat-number-container {
   display: flex;
-  justify-content: space-around;
-  margin: 1.5rem 0;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.stat {
+.stat-number {
+  color: #002855;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.stat-unit {
+  color: #002855;
+  font-size: 64px;
+  font-weight: 700;
+  margin-left: 0;
+}
+
+.stat-label {
+  color: #002855;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 160px;
+  position: relative;
+  padding-top: 16px;
   text-align: center;
+  margin: 0;
+  line-height: 1.4;
 }
 
-.statNumber {
-  font-size: 2rem;
-  font-weight: bold;
+.stat-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: #FF8B7B;
 }
 
-.statLabel {
-  font-size: 1rem;
-  color: #555;
+.engagement-button {
+  background-color: rgba(0, 40, 85, 0.1);
+  color: #002855;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Vision Section */
 .vision {
-  padding: 2rem 1rem;
-  background-color: #fffbf2;
+  padding: 60px 0;
+  background-color: #FFF8F6;
   text-align: center;
 }
 
+.vision .sectionTitle {
+  color: #002855;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+  width: 100%;
+}
+
 .visionText {
-  font-size: 1.2rem;
-  margin: 1rem 0;
+  color: #002855;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
 }
 
 /* Instagram Section */
@@ -343,42 +402,39 @@
 
 /* Section Personnalisation */
 .customization-section {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
 }
 
 .customization-content {
-    flex: 1;
-    padding: 60px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .customization-content h2 {
     color: #013264;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .customize-btn {
     background-color: #FF8064;
     color: white;
     border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.customize-btn:hover {
-    background-color: #e06e58;
+    width: fit-content;
 }
 
 .customization-image {
-    flex: 1;
-    height: 600px;
+    height: 400px;
 }
 
 .customization-image img {
@@ -390,16 +446,23 @@
 /* Wave Banner */
 .wave-banner {
     background-color: #013264;
-    padding: 15px 0;
+    padding: 8px 0;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
 }
 
 .wave-text {
     color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    gap: 16px;
     animation: scrollText 20s linear infinite;
+}
+
+.wave-text span {
+    margin: 0 8px;
 }
 
 @keyframes scrollText {
@@ -471,4 +534,98 @@
     .productGrid {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 900px) {
+  .engagement-stats {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .stat-number,
+  .stat-unit {
+    font-size: 48px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+  }
+}
+
+.passion-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 400px;
+}
+
+.passion-content {
+  background-color: #013264;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.passion-logo {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+.passion-title {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.passion-subtitle {
+  color: white;
+  font-size: 36px;
+  font-style: italic;
+  line-height: 1.1;
+  margin-top: 16px;
+  text-transform: uppercase;
+}
+
+.passion-image {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .passion-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .passion-content,
+  .passion-image {
+    height: 300px;
+  }
+  
+  .passion-content {
+    padding: 30px;
+  }
+  
+  .passion-logo {
+    width: 80px;
+    top: 30px;
+    right: 30px;
+  }
+  
+  .passion-title {
+    font-size: 36px;
+  }
+  
+  .passion-subtitle {
+    font-size: 24px;
+    margin-top: 12px;
+  }
 }
