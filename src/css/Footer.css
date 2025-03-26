@@ -62,12 +62,20 @@
 
 .social-icons {
   display: flex;
-  gap: 15px;
+  gap: 25px;
+  align-items: center;
 }
 
-.social-icons img {
-  width: 24px;
-  height: 24px;
+.social-icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 /* Payment section */
