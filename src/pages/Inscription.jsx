@@ -1,106 +1,93 @@
-import React from "react";
-import "../css/Inscription.css"; // <-- On importe la feuille de style
+import "../css/Inscription.css";
+import inscriptionImg from "../assets/images/inscription.png";
 
 const Inscription = () => {
   return (
-    <div className="inscription-page relative min-h-screen bg-[#FFFEFF]">
-      {/* Title */}
-      <h2 className="text-center text-[40px] font-bold text-[#228EA0] mt-10">
-        Inscription
-      </h2>
+    <div className="inscription-page flex min-h-screen bg-white">
+      {/* Section Image (à gauche) */}
+      <div className="hidden md:block w-1/2">
+        <img 
+          src={inscriptionImg} 
+          alt="Personnes faisant du windsurf" 
+          className="object-cover w-full h-full"
+        />
+      </div>
 
-      {/* Form Container */}
-      <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-        {/* Nom et Prénom */}
-        <div className="flex space-x-4 mb-6">
-          <div className="w-1/2">
-            <label
-              className="uppercase text-[#228EA0] font-semibold text-sm mb-2 block"
-              htmlFor="nom"
-            >
+      {/* Section Formulaire (à droite) */}
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-6">
+        {/* Title */}
+        <h2 className="text-[40px] font-bold text-[#003366] mb-6">
+          Inscription
+        </h2>
+
+        {/* Form Container avec contour */}
+        <div className="w-full max-w-md border border-gray-300 rounded-lg p-8">
+          {/* Nom */}
+          <div className="mb-6">
+            <label className="block text-sm mb-2" htmlFor="nom">
               Nom
             </label>
             <input
               type="text"
               id="nom"
-              className="w-full h-12 border border-[#228EA0] rounded-lg px-4"
+              className="w-full h-12 border border-gray-300 rounded px-4"
             />
           </div>
-          <div className="w-1/2">
-            <label
-              className="uppercase text-[#228EA0] font-semibold text-sm mb-2 block"
-              htmlFor="prenom"
-            >
+
+          {/* Prénom */}
+          <div className="mb-6">
+            <label className="block text-sm mb-2" htmlFor="prenom">
               Prénom
             </label>
             <input
               type="text"
               id="prenom"
-              className="w-full h-12 border border-[#228EA0] rounded-lg px-4"
+              className="w-full h-12 border border-gray-300 rounded px-4"
             />
           </div>
-        </div>
 
-        {/* Adresse Email */}
-        <div className="mb-6">
-          <label
-            className="uppercase text-[#228EA0] font-semibold text-sm mb-2 block"
-            htmlFor="email"
-          >
-            Adresse mail
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="w-full h-12 border border-[#228EA0] rounded-lg px-4"
-          />
-        </div>
+          {/* Email */}
+          <div className="mb-6">
+            <label className="block text-sm mb-2" htmlFor="email">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="w-full h-12 border border-gray-300 rounded px-4"
+            />
+          </div>
 
-        {/* Mot de Passe */}
-        <div className="mb-6">
-          <label
-            className="uppercase text-[#228EA0] font-semibold text-sm mb-2 block"
-            htmlFor="password"
-          >
-            Mot de passe
-          </label>
-          <input
-            type="password"
-            id="password"
-            className="w-full h-12 border border-[#228EA0] rounded-lg px-4"
-          />
-        </div>
+          {/* Mot de Passe */}
+          <div className="mb-6">
+            <label className="block text-sm mb-2" htmlFor="password">
+              Mot De Passe
+            </label>
+            <input
+              type="password"
+              id="password"
+              className="w-full h-12 border border-gray-300 rounded px-4"
+            />
+          </div>
 
-        {/* Confirmation Mot de Passe */}
-        <div className="mb-6">
-          <label
-            className="uppercase text-[#228EA0] font-semibold text-sm mb-2 block"
-            htmlFor="confirm-password"
-          >
-            Confirmation mot de passe
-          </label>
-          <input
-            type="password"
-            id="confirm-password"
-            className="w-full h-12 border border-[#228EA0] rounded-lg px-4"
-          />
-        </div>
+          {/* Confirmation Mot de Passe */}
+          <div className="mb-8">
+            <label className="block text-sm mb-2" htmlFor="confirm-password">
+              Confirmez Mot De Passe
+            </label>
+            <input
+              type="password"
+              id="confirm-password"
+              className="w-full h-12 border border-gray-300 rounded px-4"
+            />
+          </div>
 
-        {/* Bouton Valider */}
-        <div className="text-center">
-          <button className="w-40 h-12 bg-[#FF8064] text-[#FFF8E9] font-semibold text-lg rounded-full uppercase">
-            Valider
-          </button>
-        </div>
-
-        {/* Lien Se Connecter */}
-        <div className="text-center mt-6">
-          <a
-            href="/connexion"
-            className="text-[#228EA0] font-semibold text-sm underline"
-          >
-            Se connecter
-          </a>
+          {/* Bouton Valider */}
+          <div className="text-center">
+            <button className="w-full py-3 bg-[#FF8064] text-white font-semibold rounded-md uppercase">
+              VALIDER
+            </button>
+          </div>
         </div>
       </div>
     </div>
