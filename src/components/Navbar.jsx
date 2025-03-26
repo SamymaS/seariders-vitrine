@@ -1,8 +1,8 @@
 import { useState, useContext, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/logos/logobleu.png";
-import cartIcon from "../assets/logos/panier.png";
-import userIcon from "../assets/logos/compte.png";
+import cartIcon from "../assets/images/pageiconeheader1.png";
+import userIcon from "../assets/images/pageiconeheader3.png";
 import { CartContext } from "../context/CartContext";
 
 const Navbar = () => {
@@ -184,7 +184,7 @@ const Navbar = () => {
           {/* Cart Button */}
           <NavLink to="/cart" className="relative">
             <button className="flex items-center justify-center w-8 h-8" aria-label="Panier">
-              <img src={cartIcon} alt="Panier" className="h-6 w-6" />
+              <img src={cartIcon} alt="Panier" className="h-7 w-7" />
               {cartItems.length > 0 && (
                 <span className="absolute -top-2 -right-2 bg-[#FF8064] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   {cartItems.length}
