@@ -1,79 +1,7 @@
-import { useState, useRef, Suspense } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import PropTypes from 'prop-types';
+import { useState } from "react";
 import "../css/ProductsCustom.css";
+import Model3D from "../components/Model3D";
 
-// Composant simplifié pour le modèle 3D de planche à voile
-const SimpleWindsurfModel = ({ 
-  boardColor = "#FF8064", 
-  mastColor = "#FFFFFF", 
-  finColor = "#013264", 
-  sailColor = "#4A90E2",
-  boomColor = "#333333",
-}) => {
-  const groupRef = useRef();
-  
-  // Animation douce du modèle
-  useFrame((state) => {
-    if (groupRef.current) {
-      const time = state.clock.getElapsedTime();
-      groupRef.current.rotation.y = Math.sin(time * 0.1) * 0.1;
-      groupRef.current.position.y = Math.sin(time * 0.3) * 0.05 - 0.4;
-    }
-  });
-
-  return (
-    <group ref={groupRef} position={[0, 0, 0]} scale={0.85}>
-      {/* Planche */}
-      <mesh castShadow receiveShadow position={[0, 0, 0]}>
-        <boxGeometry args={[0.8, 0.1, 3]} />
-        <meshStandardMaterial color={boardColor} roughness={0.2} metalness={0.1} />
-      </mesh>
-
-      {/* Dérive centrale */}
-      <mesh castShadow position={[0, -0.1, 0.2]}>
-        <boxGeometry args={[0.1, 0.3, 0.8]} />
-        <meshStandardMaterial color={finColor} roughness={0.4} />
-      </mesh>
-
-      {/* Aileron arrière */}
-      <mesh castShadow position={[0, -0.1, -1.2]}>
-        <boxGeometry args={[0.08, 0.2, 0.4]} />
-        <meshStandardMaterial color={finColor} roughness={0.4} />
-      </mesh>
-
-      {/* Mât */}
-      <mesh castShadow position={[0, 1.5, 0.5]}>
-        <cylinderGeometry args={[0.03, 0.03, 3, 12]} />
-        <meshStandardMaterial color={mastColor} roughness={0.3} />
-      </mesh>
-
-      {/* Voile */}
-      <mesh castShadow position={[0, 1.5, 0.7]}>
-        <boxGeometry args={[0.02, 2, 1.8]} />
-        <meshStandardMaterial color={sailColor} transparent={true} opacity={0.85} />
-      </mesh>
-
-      {/* Wishbone */}
-      <mesh castShadow position={[0, 1.1, 1]}>
-        <cylinderGeometry args={[0.02, 0.02, 1.6, 12]} />
-        <meshStandardMaterial color={boomColor} roughness={0.4} />
-      </mesh>
-    </group>
-  );
-};
-
-// Validation des props
-SimpleWindsurfModel.propTypes = {
-  boardColor: PropTypes.string,
-  mastColor: PropTypes.string,
-  finColor: PropTypes.string,
-  sailColor: PropTypes.string,
-  boomColor: PropTypes.string
-};
-
-// Page principale
 const ProductsCustom = () => {
   // États pour les différentes parties personnalisables
   const [visibleSection, setVisibleSection] = useState(null);
@@ -229,58 +157,15 @@ const ProductsCustom = () => {
         </aside>
 
         <main className="custom-3d-view">
-          <Suspense fallback={<div className="loading">Chargement du modèle 3D...</div>}>
-            <Canvas 
-              shadows
-              camera={{ position: [0, 0, 4.5], fov: 45 }}
-              style={{ 
-                height: "100%", 
-                width: "100%",
-                maxHeight: "100%", 
-                position: "relative",
-                zIndex: 1
-              }}
-            >
-              <OrbitControls 
-                enablePan={false}
-                minDistance={1.5}
-                maxDistance={8}
-                enableDamping={true}
-                dampingFactor={0.1}
-              />
-              
-              <ambientLight intensity={0.6} />
-              <directionalLight 
-                position={[10, 10, 5]} 
-                intensity={1} 
-                castShadow
-              />
-              <spotLight
-                position={[-5, 5, 5]}
-                intensity={0.7}
-                angle={0.3}
-                penumbra={0.5}
-                castShadow
-              />
-              
-              <SimpleWindsurfModel 
-                boardColor={boardColor}
-                sailColor={sailColor}
-                finColor={finColor}
-                mastColor={mastColor}
-                boomColor={boomColor}
-              />
-              
-              <mesh 
-                rotation={[-Math.PI / 2, 0, 0]} 
-                position={[0, -0.6, 0]} 
-                receiveShadow
-              >
-                <planeGeometry args={[8, 8]} />
-                <meshStandardMaterial color="#f0f0f0" />
-              </mesh>
-            </Canvas>
-          </Suspense>
+          <Model3D 
+            boardColor={boardColor} 
+            sailColor={sailColor} 
+            finColor={finColor} 
+            mastColor={mastColor} 
+            boomColor={boomColor}
+            width={550}
+            height={450}
+          />
           
           <div className="view-instructions">
             <p>Cliquez et faites glisser pour faire pivoter la vue • Utilisez la molette pour zoomer</p>
