@@ -1,45 +1,47 @@
-import React from "react";
+import "../css/Contact.css";
 
 const Contact = () => {
   return (
     <div className="contact-section">
       <div className="contact-message">
-        <p>
-          Pour tous problèmes <br />
-          ou questions, <br />
+        <h2>
+          Pour tous problèmes<br />
+          ou questions,<br />
           contactez nous !
-        </p>
+        </h2>
       </div>
-      <form className="contact-form">
-        <div>
-          <label htmlFor="nom">Nom</label>
-          <input type="text" id="nom" placeholder="Votre nom" />
-        </div>
-        <div>
-          <label htmlFor="prenom">Prénom</label>
-          <input type="text" id="prenom" placeholder="Votre prénom" />
-        </div>
-        <div>
-          <label htmlFor="email">Adresse mail</label>
-          <input type="email" id="email" placeholder="Votre adresse email" />
-        </div>
-        <div>
-          <label htmlFor="sujet">Sujet</label>
-          <input type="text" id="sujet" placeholder="Sujet de votre message" />
-        </div>
-        <div>
-          <label htmlFor="message">Votre message</label>
-          <textarea id="message" placeholder="Votre message"></textarea>
-        </div>
-        <div className="contact-policy">
-          <input type="checkbox" id="policy" />
-          <label htmlFor="policy">
-            En cochant cette case, vous acceptez notre politique de
-            confidentialité.
-          </label>
-        </div>
-        <button type="submit">Envoyer</button>
-      </form>
+      <div className="contact-form-container">
+        <form className="contact-form">
+          <div className="form-group">
+            <label htmlFor="nom">Nom</label>
+            <input type="text" id="nom" />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="prenom">Prénom</label>
+            <input type="text" id="prenom" />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="message">Votre Message</label>
+            <textarea id="message" rows="5"></textarea>
+          </div>
+          
+          <div className="form-checkbox">
+            <input type="checkbox" id="privacy" />
+            <label htmlFor="privacy">En Cochant Cette Case, Vous Acceptez Notre Politique De Confidentialité.</label>
+          </div>
+          
+          <div className="form-button">
+            <button type="submit">VALIDER</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
