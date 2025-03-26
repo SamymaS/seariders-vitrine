@@ -167,9 +167,6 @@ const ProductsCustom = () => {
             height={450}
           />
           
-          <div className="view-instructions">
-            <p>Cliquez et faites glisser pour faire pivoter la vue • Utilisez la molette pour zoomer</p>
-          </div>
         </main>
       </div>
     </div>
