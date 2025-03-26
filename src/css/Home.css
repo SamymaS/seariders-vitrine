@@ -1,7 +1,13 @@
 /* Global Styles */
 .homePage {
   font-family: 'Montserrat', Arial, sans-serif;
-  color: #013264;
+  color: #002855;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Hero Section */
@@ -185,9 +191,11 @@
 
 /* Engagement Section */
 .engagement {
-  padding: 60px 0;
+  padding: 60px 0 40px;
   background-color: white;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .engagement-title {
@@ -253,7 +261,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 70%;
   height: 2px;
   background-color: #FF8B7B;
 }
@@ -273,12 +281,14 @@
 
 /* Vision Section */
 .vision {
-  padding: 60px 0;
+  padding: 60px 0 40px;
   background-color: #FFF8F6;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.vision .sectionTitle {
+.vision h2 {
   color: #002855;
   font-size: 48px;
   font-weight: 700;
@@ -299,38 +309,47 @@
 
 /* Instagram Section */
 .instagram {
-  padding: 2rem 1rem;
-  background-color: #f4f8ff;
+  padding: 50px 0;
+  background-color: #F5F9FE;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.instagram h2 {
+  color: #013264;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .instagramHandle {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  display: inline-block;
+  color: #013264;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  background-color: #FFE8E5;
+  padding: 8px 18px;
+  border-radius: 100px;
+  text-transform: uppercase;
 }
 
-.instagramPosts {
+.instagramGrid {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
-}
-
-.instagramPost {
-  width: 150px;
-  height: 150px;
-  background-color: #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.instagramImage {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+.instagramBanner {
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .home {
@@ -402,76 +421,133 @@
 
 /* Section Personnalisation */
 .customization-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #FFF8F6;
+  position: relative;
+  overflow: hidden;
 }
 
 .customization-content {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .customization-content h2 {
-    color: #013264;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
+  color: #013264;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+  max-width: 350px;
+  line-height: 1.1;
 }
 
 .customize-btn {
-    background-color: #FF8064;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    width: fit-content;
+  background-color: #FF7F61;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.customize-btn:hover {
+  background-color: #FF6A4A;
 }
 
 .customization-image {
-    height: 400px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .customization-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Wave Banner */
 .wave-banner {
-    background-color: #013264;
-    padding: 8px 0;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
+  background-color: #013264;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
 }
 
 .wave-text {
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-    display: flex;
-    gap: 16px;
-    animation: scrollText 20s linear infinite;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-flex;
+  animation: scrollText 20s linear infinite;
+  white-space: nowrap;
+  align-items: center;
 }
 
 .wave-text span {
-    margin: 0 8px;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.wave-text span::before {
+  content: '//';
+  margin-right: 15px;
+  margin-left: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  display: inline-block;
+  transform: rotate(20deg);
+  font-style: italic;
+}
+
+.wave-text span:first-child {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.wave-text span:first-child::before {
+  content: '';
+  margin: 0;
 }
 
 @keyframes scrollText {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Section Instagram */
@@ -555,7 +631,14 @@
 .passion-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 400px;
+  height: 100vh;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  position: relative;
+  left: 0;
+  overflow: hidden;
 }
 
 .passion-content {
@@ -563,8 +646,14 @@
   padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  text-align: center;
 }
 
 .passion-logo {
@@ -578,7 +667,7 @@
 
 .passion-title {
   color: white;
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 700;
   line-height: 1.1;
   text-transform: uppercase;
@@ -587,10 +676,10 @@
 
 .passion-subtitle {
   color: white;
-  font-size: 36px;
+  font-size: 46px;
   font-style: italic;
   line-height: 1.1;
-  margin-top: 16px;
+  margin-top: 20px;
   text-transform: uppercase;
 }
 
@@ -598,6 +687,9 @@
   background-size: cover;
   background-position: center;
   height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 900px) {
@@ -628,4 +720,16 @@
     font-size: 24px;
     margin-top: 12px;
   }
+}
+
+/* Combine Engagement and Vision */
+.engagement-vision-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: auto;
 }
