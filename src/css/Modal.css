@@ -1,0 +1,105 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-container {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-container h2 {
+  color: #003366;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.modal-container p {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.modal-button {
+  background-color: #FF8064;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+}
+
+.modal-button:hover {
+  background-color: #e07058;
+}
+
+.modal-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+/* Types de modales */
+.modal-container.success .modal-icon {
+  color: #28a745;
+}
+
+.modal-container.error .modal-icon {
+  color: #dc3545;
+}
+
+.modal-container.info .modal-icon {
+  color: #007bff;
+}
+
+/* Design spécifique pour les petits écrans */
+@media (max-width: 576px) {
+  .modal-container {
+    width: 85%;
+    padding: 25px;
+  }
+  
+  .modal-container h2 {
+    font-size: 20px;
+  }
+  
+  .modal-icon {
+    width: 50px;
+    height: 50px;
+  }
+} 

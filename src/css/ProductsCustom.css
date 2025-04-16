@@ -12,172 +12,265 @@ body {
 }
 
 .customisation-page {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-}
-
-.header {
   width: 100%;
+  min-height: calc(100vh - 200px);
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 1;
 }
 
-.header h1 {
-  font-size: 2.5rem;
-  color: #002855;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.filter-container {
+/* En-tête */
+.custom-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-.filter-buttons {
+.custom-title {
+  font-size: 2.2rem;
+  color: #013264;
+  font-weight: bold;
+}
+
+/* Container pour le badge Mode 3D */
+.mode-3d-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-mode {
+  background-color: #FF8064;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+/* Layout principal */
+.custom-main-container {
   display: flex;
   gap: 15px;
+  height: calc(100vh - 250px);
+  max-height: 650px;
 }
 
-.filter-buttons button {
-  padding: 10px 20px;
-  background-color: transparent;
-  color: #002855;
-  border: 2px solid #002855;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.filter-buttons button:hover {
-  background-color: #ff8c66;
-  color: #fff;
-}
-
-.button-3d {
-  padding: 10px 25px;
-  background-color: transparent;
-  color: #002855;
-  border: 2px solid #002855;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.button-3d:hover {
-  background-color: #ff8c66;
-  color: #fff;
-}
-
-.customisation-sidebar {
+/* Barre latérale d'options */
+.custom-sidebar {
+  width: 320px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  overflow-y: auto;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
-  width: 20%;
-  max-width: 300px;
-  margin-right: 20px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-right: 1px solid #ddd;
 }
 
-.customisation-section {
-  margin-bottom: 20px;
-}
-
-.customisation-button {
-  width: 100%;
-  padding: 10px 15px;
-  background-color: #002855;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
+.sidebar-title {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #013264;
   font-weight: bold;
+}
+
+.custom-section {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.section-button {
+  width: 100%;
+  padding: 8px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s;
 }
 
-.customisation-button:hover {
-  background-color: #ff8c66;
+.section-button.active {
+  font-weight: bold;
+  color: #013264;
 }
 
-.plus-icon {
+.toggle-icon {
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.colors-container {
-  margin-top: 10px;
-  padding-left: 20px;
-}
-
-.color-item {
-  padding: 5px 0;
-  font-size: 0.9rem;
-  color: #333;
-  border-left: 3px solid #002855;
-  padding-left: 10px;
-}
-
-.main-container {
+.color-options {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end; /* Alignement pour le bouton "Terminer" */
-  position: relative;
-  padding: 20px;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px 0;
 }
 
-.product-image {
-  width: 60%;
-  max-width: 300px;
-  margin: 0 auto;
+.color-option {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-option.selected {
+  border: 3px solid #013264;
+}
+
+.color-name {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.75rem;
+  background-color: #333;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.color-option:hover .color-name {
+  opacity: 1;
+}
+
+.custom-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.reset-button, .finish-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.reset-button {
+  background-color: #e0e0e0;
+  color: #333;
+  flex: 1;
 }
 
 .finish-button {
-  position: absolute;
-  bottom: 20px;
-  right: 70px; /* Ajustement horizontal */
-  transform: translateY(-50%); /* Alignement vertical avec "3D" */
-  padding: 10px 25px;
-  background-color: #002855;
+  background-color: #FF8064;
   color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s;
+  flex: 2;
+}
+
+.reset-button:hover {
+  background-color: #d0d0d0;
 }
 
 .finish-button:hover {
-  background-color: #ff8c66;
+  background-color: #ff6850;
+}
+
+/* Vue 3D */
+.custom-3d-view {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-height: 450px;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #013264;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.view-instructions {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Styles pour les couleurs prédéfinies */
+.color-blue {
+  background-color: #4A90E2;
+}
+
+.color-red {
+  background-color: #FF3B30;
+}
+
+.color-green {
+  background-color: #34C759;
+}
+
+.color-orange {
+  background-color: #FF8064;
+}
+
+.color-black {
+  background-color: #1D1D1F;
 }
 
 /* Responsive */
-@media (max-width: 992px) {
-  .main-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .finish-button {
-    position: relative;
-    transform: none;
-    margin-top: 20px;
-  }
-}
-
 @media (max-width: 768px) {
-  .filter-container {
+  .custom-main-container {
     flex-direction: column;
-    align-items: flex-start;
+    height: auto;
+    max-height: none;
+  }
+  
+  .custom-sidebar {
+    width: 100%;
+    max-height: 400px;
+  }
+  
+  .custom-3d-view {
+    min-height: 350px;
+    max-height: 400px;
+  }
+
+  .customisation-page {
+    margin-bottom: 80px;
   }
 }
