@@ -129,6 +129,7 @@ Commande start :
    - Samy Boudaoud M1 DevIOT
    - Abdallah Merad B2 Info
    - Hugo Bisserier B2 Info
+   - Mathias Neri B2 Info
    ```
 
 ---
